@@ -1,0 +1,34 @@
+@use "../foundation/variables" as v;
+
+.p-services{
+	&__list{
+		display: flex;
+		column-gap: 3%;
+		@include v.mq(md){
+			flex-direction: column;
+			max-width: 400px;
+			margin-right: auto;
+			margin-left: auto;
+			column-gap:0;
+		}
+	}
+	&__item{
+		padding: 20px 3%;
+		background-color: v.$color-white;
+		border-radius: 10px;
+		box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.15);
+		@include v.mq(md){
+			padding: 20px 8%;
+			+ li{
+				margin-top: 20px;
+			}
+		}
+
+	}
+	&__title{
+		margin-top: 30px;
+	}
+	&__desc{
+		margin-top: 30px;
+	}
+}

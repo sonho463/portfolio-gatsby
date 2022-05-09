@@ -1,0 +1,43 @@
+@use "../foundation/variables" as v;
+
+.p-contact__form {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 3rem;
+	@include v.mq(lg){
+		width: 90%;
+		font-size: 2.4rem;
+	}
+}
+
+.p-contact__form-body {
+	label,input,textarea{
+		display: block;
+		border-radius: 30px;
+	}
+  label {
+		margin-bottom: 20px;
+  }
+  input,
+  textarea {
+		background-color: v.$main-secondary;
+    width: 100%;
+    padding: 30px;
+		@include v.mq(sm){
+			padding: 10px 30px;
+		}
+  }
+	textarea{
+		height: 500px;
+	}
+}
+
+.p-contact__submit-button{
+	background-color: v.$main-primary !important;
+	color:v.$color-white;
+	text-align: center;
+	&:hover{
+		opacity: .5;
+	}
+}

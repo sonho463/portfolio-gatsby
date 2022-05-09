@@ -1,0 +1,19 @@
+@use "../foundation/variables" as v;
+
+.l-header {
+  position: fixed;
+  top: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: v.$main-secondary;
+	width: 100%;
+  @include v.mq(md) {
+    position: fixed;
+    top: unset;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+		padding: 0 5%;
+    // background-color: v.$color-white;
+  }
+}
