@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
 import { StaticImage } from "gatsby-plugin-image";
-import SwiperWorks from "../components/swiper-works";
-import { useEffect } from "react";
-
+import { SwiperWorks } from "../components/SwiperWorks";
+// import { useEffect } from "react";
+import { Footer } from "../components/Footer";
 
 // markup
 const IndexPage = () => {
@@ -11,38 +11,6 @@ const IndexPage = () => {
   let d = new Date();
   let month = d.getMonth() + 1;
   let day = d.getDate();
-
-  // お問い合わせボタンが下に来たら消える処理
-  useEffect(()=>{
-		window.onload = () => {
-			console.log("start observe");
-			startObserve();
-		};
-	})
-	const startObserve = () => {
-		const callback = (entries, observer) => {
-			entries.forEach((entry) => {
-				if (entry.intersectionRatio === 1) {
-					cvButton.classList.add("is-hidden");
-					console.log("active");
-				} else if (!entry.isIntersecting) {
-					cvButton.classList.remove("is-hidden");
-					console.log("hidden");
-				}
-			});
-		};
-
-		const options = {
-			threshold: [0.2, 1.0],
-		};
-
-		const observer = new IntersectionObserver(callback, options);
-		const target = document.querySelector(".js-footer__logo");
-		const cvButton = document.querySelector(".js-cv-button");
-
-		observer.observe(target);
-	};
-
 
   return (
     <>
@@ -110,7 +78,8 @@ const IndexPage = () => {
 				<span class="p-hamburger-btn__line"></span>
 			</div> */}
         </header>
-        <nav className="l-cv-button js-cv-button">
+
+        {/* <nav className="l-cv-button js-cv-button">
           <a href="/contact.html" className="l-cv-button__link">
             <StaticImage
               className="l-cv-button__image"
@@ -118,7 +87,8 @@ const IndexPage = () => {
               alt="お問い合わせ"
             />
           </a>
-        </nav>
+        </nav> */}
+
         <div className="l-main">
           <section className="p-mv">
             <div className="c-inner">
@@ -198,6 +168,7 @@ const IndexPage = () => {
               </section>
             </div>
           </section>
+
           <section id="works" className="p-works c-section">
             <div className="c-inner">
               <div className="c-section__title">
@@ -205,7 +176,6 @@ const IndexPage = () => {
                   制作実績・これまでの活動
                 </h2>
               </div>
-
               <SwiperWorks />
             </div>
           </section>
@@ -373,6 +343,7 @@ const IndexPage = () => {
               </ul>
             </div>
           </section>
+
           <section id="career" className="p-career c-section">
             <div className="c-inner">
               <div className="c-section__title">
@@ -473,33 +444,8 @@ const IndexPage = () => {
             </div>
           </section>
         </div>
-        <footer className="l-footer js-footer">
-          <figure className="l-footer__logo js-footer__logo">
-            <a href="#">
-              <StaticImage src="../images/footer/footer-logo.png" alt="" />
-            </a>
-          </figure>
-          <a href="/contact.html" className="l-footer__cv">
-            <StaticImage src="../images/footer/footer-cv.png" alt="" />
-          </a>
-          <nav className="l-footer__nav">
-            <ul className="l-footer__menu">
-              <li className="l-footer__menu__item">
-                <a href="#about">アバウト</a>
-              </li>
-              <li className="l-footer__menu__item">
-                <a href="#works">実績</a>
-              </li>
-              <li className="l-footer__menu__item">
-                <a href="#skills">スキル</a>
-              </li>
-              <li className="l-footer__menu__item">
-                <a href="#career">経歴</a>
-              </li>
-            </ul>
-          </nav>
-          <p className="l-footer__copyright">©2021 WEBSON そんほんす</p>
-        </footer>
+        <Footer />
+
         {/* jquery */}
         {/* メインのJavaScript */}
       </div>

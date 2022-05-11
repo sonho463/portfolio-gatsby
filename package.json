@@ -30,6 +30,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "react-intersection-observer": "^9.1.0",
     "react-typography": "^0.16.20",
     "sass": "^1.51.0",
     "swiper": "^8.1.4",

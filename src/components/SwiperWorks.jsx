@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-export default () => {
+export const SwiperWorks = () => {
   return (
     <Swiper
 		className="p-works__card-outer"
@@ -146,7 +146,7 @@ export default () => {
           </div>
         </div>
       </SwiperSlide>
-      
+
     </Swiper>
   );
 };
