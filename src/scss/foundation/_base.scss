@@ -1,4 +1,5 @@
 @use "./variables" as v;
+@import url("https://use.typekit.net/dew5yuh.css");
 
 *,
 *:before,
@@ -17,7 +18,6 @@ html {
 body {
 	color: v.$main-primary;
 	font-size: 1.6rem;
-	font-family: "Helvetica Neue", Arial, "Hiragino Mincho ProN", Meiryo, sans-serif;
 	min-width: 350px;
 	width: 100%;
 	text-align: justify;

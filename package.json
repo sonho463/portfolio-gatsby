@@ -22,10 +22,13 @@
     "gatsby-plugin-react-helmet": "^5.13.0",
     "gatsby-plugin-sass": "^5.13.0",
     "gatsby-plugin-sitemap": "^5.13.0",
+    "gatsby-plugin-typography": "^4.14.0",
     "gatsby-source-filesystem": "^4.13.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "sass": "^1.51.0"
+    "react-typography": "^0.16.20",
+    "sass": "^1.51.0",
+    "typography": "^0.16.21"
   }
 }
