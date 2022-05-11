@@ -1,11 +1,12 @@
 import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
-export const CvButton = ({ inView }) => {
+export const CvButton = ({inView}) => {
+  console.log(inView);
   return (
     <div class="cv-button">
       {inView ? (
-        <span>非表示</span>
+        <span></span>
       ) : (
         <nav className="l-cv-button js-cv-button">
           <a href="/contact.html" className="l-cv-button__link">

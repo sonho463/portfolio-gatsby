@@ -4,6 +4,8 @@ import { StaticImage } from "gatsby-plugin-image";
 import { SwiperWorks } from "../components/SwiperWorks";
 // import { useEffect } from "react";
 import { Footer } from "../components/Footer";
+import { useInView } from "react-intersection-observer";
+import { Wrapper } from "../components/Wrapper";
 
 // markup
 const IndexPage = () => {
@@ -11,6 +13,12 @@ const IndexPage = () => {
   let d = new Date();
   let month = d.getMonth() + 1;
   let day = d.getDate();
+
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
+
+	console.log(inView);
 
   return (
     <>
@@ -444,10 +452,11 @@ const IndexPage = () => {
             </div>
           </section>
         </div>
+        <Wrapper inView={inView}>
+          <div ref={ref}></div>
+        </Wrapper>
         <Footer />
 
-        {/* jquery */}
-        {/* メインのJavaScript */}
       </div>
     </>
   );
