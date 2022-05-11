@@ -1,10 +1,44 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
 import { StaticImage } from "gatsby-plugin-image";
-import SwiperWorks from '../components/swiper-works';
+import SwiperWorks from "../components/swiper-works";
 
 // markup
 const IndexPage = () => {
+  let d = new Date();
+  let month = d.getMonth() + 1;
+  let day = d.getDate();
+
+  window.onload = () => {
+    console.log("start observe");
+    startObserve();
+  };
+
+  const startObserve = () => {
+    const callback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio === 1) {
+          cvButton.classList.add("is-hidden");
+          console.log("active");
+        } else if (!entry.isIntersecting) {
+          cvButton.classList.remove("is-hidden");
+          console.log("hidden");
+        }
+      });
+    };
+
+    const options = {
+      threshold: [0.2, 1.0],
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+
+    const target = document.querySelector(".js-footer__logo");
+    const cvButton = document.querySelector(".js-cv-button");
+
+    observer.observe(target);
+  };
+
   return (
     <>
       <Helmet>
@@ -123,11 +157,11 @@ const IndexPage = () => {
                   <div className="p-about__date-unit">
                     <p className="p-about__date">
                       <span id="js_month" className="p-about__month">
-                        ○
+                        {month}
                       </span>
                       月
                       <span id="js_day" className="p-about__day">
-                        ○
+                        {day}
                       </span>
                       日
                     </p>
@@ -167,8 +201,7 @@ const IndexPage = () => {
                 </h2>
               </div>
 
-							<SwiperWorks />
-
+              <SwiperWorks />
             </div>
           </section>
           <section id="skills" className="p-skills c-section">
@@ -252,8 +285,6 @@ const IndexPage = () => {
                       className="p-skills__article__icon__image"
                       src="../images/skills/ico_xd.png"
                       alt="xdのアイコン"
-                      width={150}
-                      height={150}
                     />
                   </figure>
                   <div className="p-skills__article__text-block">
@@ -438,7 +469,7 @@ const IndexPage = () => {
           </section>
         </div>
         <footer className="l-footer js-footer">
-          <figure className="l-footer__logo">
+          <figure className="l-footer__logo js-footer__logo">
             <a href="#">
               <StaticImage src="../images/footer/footer-logo.png" alt="" />
             </a>
