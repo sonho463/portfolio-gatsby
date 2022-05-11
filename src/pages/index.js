@@ -2,17 +2,23 @@ import * as React from "react";
 import { Helmet } from "react-helmet";
 import { StaticImage } from "gatsby-plugin-image";
 import SwiperWorks from "../components/swiper-works";
+import { useEffect } from "react";
+
 
 // markup
 const IndexPage = () => {
+  // 今日の日付変数
   let d = new Date();
   let month = d.getMonth() + 1;
   let day = d.getDate();
 
-  window.onload = () => {
-    console.log("start observe");
-    startObserve();
-  };
+  // お問い合わせボタンが下に来たら消える処理
+  useEffect(()=>{
+		window.onload = () => {
+			console.log("start observe");
+			startObserve();
+		};
+	})
 
   const startObserve = () => {
     const callback = (entries, observer) => {
@@ -32,7 +38,6 @@ const IndexPage = () => {
     };
 
     const observer = new IntersectionObserver(callback, options);
-
     const target = document.querySelector(".js-footer__logo");
     const cvButton = document.querySelector(".js-cv-button");
 
