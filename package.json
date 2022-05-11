@@ -32,6 +32,7 @@
     "react-helmet": "^6.1.0",
     "react-typography": "^0.16.20",
     "sass": "^1.51.0",
+    "swiper": "^8.1.4",
     "typography": "^0.16.21"
   }
 }

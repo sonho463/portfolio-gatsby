@@ -52,3 +52,143 @@
 Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
 
 [<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+
+
+ <div className="js-card-outer swiper">
+                <ul className="p-works__card-list swiper-wrapper js-card-list">
+                  <li className="p-works__card-wrapper swiper-slide js-card">
+                    <div className="p-works__card">
+                      <div className="p-works__card__inner">
+                        <div className="p-works__drop">
+                          <div className="p-works__drop__inner">
+                            <span className="p-works__tag">ウェブ制作</span>
+                            <h3 className="p-works__title">
+                              八尾市教職員組合新規採用者用LP
+                            </h3>
+                            <figure className="p-works__image">
+                              <StaticImage
+                                src="../images/works/works-ytu-rookies.png"
+                                alt=""
+                              />
+                            </figure>
+                          </div>
+                        </div>
+                        <p className="p-works__text">
+                          新規採用者に向けて組合を紹介するLPを作成。静的サイト。netlifyでホスティング。
+                        </p>
+                        <a href="#" className="p-works__nav-to-detail">
+                          <StaticImage
+                            src="../images/works/view-details.png"
+                            className="p-works__nav-to-detail__image"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li className="p-works__card-wrapper swiper-slide js-card">
+                    <div className="p-works__card">
+                      <div href="#" className="p-works__card__inner">
+                        <div className="p-works__drop">
+                          <div className="p-works__drop__inner">
+                            <span className="p-works__tag">ウェブ開発</span>
+                            <h3 className="p-works__title">
+                              Gatsby-microCMSブログ
+                            </h3>
+                            <figure className="p-works__image">
+                              <StaticImage
+                                src="../images/works/works-gatsby-micro.png"
+                                alt=""
+                              />
+                            </figure>
+                          </div>
+                        </div>
+                        <p className="p-works__text">
+                          BootstrapベースのHTMLテンプレートをGatsbyJSで構築、ヘッドレスCMSにmicroCMSを使用。勉強会でのレポート用に構築したもの。
+                        </p>
+                        <a href="#" className="p-works__nav-to-detail">
+                          <StaticImage
+                            src="../images/works/view-details.png"
+                            className="p-works__nav-to-detail__image"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li className="p-works__card-wrapper swiper-slide js-card">
+                    <div className="p-works__card">
+                      <div href="#" className="p-works__card__inner">
+                        <div className="p-works__drop">
+                          <div className="p-works__drop__inner">
+                            <span className="p-works__tag">
+                              ウェブ開発（Gatsby）
+                            </span>
+                            <h3 className="p-works__title">
+                              パソコンの勉強リンク集
+                            </h3>
+                            <figure className="p-works__image">
+                              <StaticImage
+                                src="../images/works/study-link.png"
+                                alt=""
+                              />
+                            </figure>
+                          </div>
+                        </div>
+                        <p className="p-works__text">
+                          WordPressオリジナルテーマコーディング案件、ウェブ制作会社LPコーディング案件を納品。自分の所属団体のHPデザイン〜コーディングなど
+                        </p>
+                        <a href="#" className="p-works__nav-to-detail">
+                          <StaticImage
+                            src="../images/works/view-details.png"
+                            className="p-works__nav-to-detail__image"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li className="p-works__card-wrapper swiper-slide js-card">
+                    <div className="p-works__card">
+                      <div href="#" className="p-works__card__inner">
+                        <div className="p-works__drop">
+                          <div className="p-works__drop__inner">
+                            <span className="p-works__tag">
+                              ウェブ開発（Gatsby）
+                            </span>
+                            <h3 className="p-works__title">
+                              ポートフォリオサイト
+                            </h3>
+                            <figure className="p-works__image">
+                              <StaticImage
+                                src="../images/works/works_portfolio.png"
+                                alt=""
+                              />
+                            </figure>
+                          </div>
+                        </div>
+                        <p className="p-works__text">
+                          WordPressオリジナルテーマコーディング案件、ウェブ制作会社LPコーディング案件を納品。自分の所属団体のHPデザイン〜コーディングなど
+                        </p>
+                        <a href="#" className="p-works__nav-to-detail">
+                          <StaticImage
+                            src="../images/works/view-details.png"
+                            className="p-works__nav-to-detail__image"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div className="swiper-pagination" />
+                {/* If we need navigation buttons */}
+                <div className="swiper-button-prev">
+                  <i className="fa-solid fa-play" />
+                </div>
+                <div className="swiper-button-next">
+                  <i className="fa-solid fa-play" />
+                </div>
+                {/* If we need scrollbar */}
+                {/* <div class="swiper-scrollbar"></div> */}
+              </div>
