@@ -18,6 +18,7 @@
     flex: 4;
     height: 150px;
     width: auto;
+		text-align: center;
 		&--html{
 			height: auto;
 			max-height: 150px;
@@ -27,6 +28,7 @@
 			height: 100px;
 		}
     &__image {
+			display: inline-block;
       height: 100%;
       width: auto;
       margin-right: auto;

@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
+import { StaticImage } from "gatsby-plugin-image";
 
 // markup
 const IndexPage = () => {
@@ -7,7 +8,6 @@ const IndexPage = () => {
     <>
       <Helmet>
         <title>WEBSON・そんほんす</title>
-
       </Helmet>
 
       <div className="overflow-hidden">
@@ -34,7 +34,10 @@ const IndexPage = () => {
               </li>
               <li className="p-g-nav__item p-g-nav__item--icon">
                 <a href="/" className="p-g-nav__link--icon">
-                  <img src="./assets/images/header/ico_webson.png" alt="" />
+                  <StaticImage
+                    src="../images/header/ico_webson.png"
+                    alt="ウェブソンのアイコン"
+                  />
                 </a>
               </li>
               <li className="p-g-nav__item">
@@ -69,9 +72,9 @@ const IndexPage = () => {
         </header>
         <nav className="l-cv-button js-cv-button">
           <a href="/contact.html" className="l-cv-button__link">
-            <img
+            <StaticImage
               className="l-cv-button__image"
-              src="./assets/images/mv/cv-button.png"
+              src="../images/mv/cv-button.png"
               alt="お問い合わせ"
             />
           </a>
@@ -79,9 +82,6 @@ const IndexPage = () => {
         <div className="l-main">
           <section className="p-mv">
             <div className="c-inner">
-              {/* <p class="p-mv__circle-left">
-					<img src="./assets/images/mv/yellow-circle.png" alt="">
-				</p> */}
               <div className="p-mv__sub-heading">
                 <p className="p-mv__sub-heading__text">大阪府八尾市</p>
                 <p className="p-mv__sub-heading__text">
@@ -96,13 +96,10 @@ const IndexPage = () => {
                   <span className="inline-block">（孫弘樹）</span>
                 </h1>
               </div>
-              {/* <p class="p-mv__circle-right">
-					<img src="./assets/images/mv/yellow-circle.png" alt="">
-				</p> */}
               <figure className="p-mv__face-photo">
-                <img
-                  src="./assets/images/mv/face.png"
-                  alt=""
+                <StaticImage
+                  src="../images/mv/face.png"
+                  alt="そんほんすの似顔絵"
                   className="p-mv__face-photo__image"
                 />
               </figure>
@@ -180,8 +177,8 @@ const IndexPage = () => {
                               八尾市教職員組合新規採用者用LP
                             </h3>
                             <figure className="p-works__image">
-                              <img
-                                src="./assets/images/works/works-ytu-rookies.png"
+                              <StaticImage
+                                src="../images/works/works-ytu-rookies.png"
                                 alt=""
                               />
                             </figure>
@@ -191,8 +188,8 @@ const IndexPage = () => {
                           新規採用者に向けて組合を紹介するLPを作成。静的サイト。netlifyでホスティング。
                         </p>
                         <a href="#" className="p-works__nav-to-detail">
-                          <img
-                            src="./assets/images/works/view-details.png"
+                          <StaticImage
+                            src="../images/works/view-details.png"
                             className="p-works__nav-to-detail__image"
                             alt=""
                           />
@@ -210,8 +207,8 @@ const IndexPage = () => {
                               Gatsby-microCMSブログ
                             </h3>
                             <figure className="p-works__image">
-                              <img
-                                src="./assets/images/works/works-gatsby-micro.png"
+                              <StaticImage
+                                src="../images/works/works-gatsby-micro.png"
                                 alt=""
                               />
                             </figure>
@@ -221,8 +218,8 @@ const IndexPage = () => {
                           BootstrapベースのHTMLテンプレートをGatsbyJSで構築、ヘッドレスCMSにmicroCMSを使用。勉強会でのレポート用に構築したもの。
                         </p>
                         <a href="#" className="p-works__nav-to-detail">
-                          <img
-                            src="./assets/images/works/view-details.png"
+                          <StaticImage
+                            src="../images/works/view-details.png"
                             className="p-works__nav-to-detail__image"
                             alt=""
                           />
@@ -242,8 +239,8 @@ const IndexPage = () => {
                               パソコンの勉強リンク集
                             </h3>
                             <figure className="p-works__image">
-                              <img
-                                src="./assets/images/works/study-link.png"
+                              <StaticImage
+                                src="../images/works/study-link.png"
                                 alt=""
                               />
                             </figure>
@@ -253,8 +250,8 @@ const IndexPage = () => {
                           WordPressオリジナルテーマコーディング案件、ウェブ制作会社LPコーディング案件を納品。自分の所属団体のHPデザイン〜コーディングなど
                         </p>
                         <a href="#" className="p-works__nav-to-detail">
-                          <img
-                            src="./assets/images/works/view-details.png"
+                          <StaticImage
+                            src="../images/works/view-details.png"
                             className="p-works__nav-to-detail__image"
                             alt=""
                           />
@@ -274,8 +271,8 @@ const IndexPage = () => {
                               ポートフォリオサイト
                             </h3>
                             <figure className="p-works__image">
-                              <img
-                                src="./assets/images/works/works_portfolio.png"
+                              <StaticImage
+                                src="../images/works/works_portfolio.png"
                                 alt=""
                               />
                             </figure>
@@ -285,8 +282,8 @@ const IndexPage = () => {
                           WordPressオリジナルテーマコーディング案件、ウェブ制作会社LPコーディング案件を納品。自分の所属団体のHPデザイン〜コーディングなど
                         </p>
                         <a href="#" className="p-works__nav-to-detail">
-                          <img
-                            src="./assets/images/works/view-details.png"
+                          <StaticImage
+                            src="../images/works/view-details.png"
                             className="p-works__nav-to-detail__image"
                             alt=""
                           />
@@ -316,9 +313,9 @@ const IndexPage = () => {
               <ul className="p-skills__article-list">
                 <li className="p-skills__article__item">
                   <figure className="p-skills__article__icon p-skills__article__icon--html">
-                    <img
+                    <StaticImage
                       className="p-skills__article__icon__image"
-                      src="./assets/images/skills/ico_html.png"
+                      src="../images/skills/ico_html.png"
                       alt=""
                     />
                   </figure>
@@ -333,9 +330,9 @@ const IndexPage = () => {
                 </li>
                 <li className="p-skills__article__item">
                   <figure className="p-skills__article__icon">
-                    <img
+                    <StaticImage
                       className="p-skills__article__icon__image"
-                      src="./assets/images/skills/ico_wp.png"
+                      src="../images/skills/ico_wp.png"
                       alt=""
                     />
                   </figure>
@@ -350,9 +347,9 @@ const IndexPage = () => {
                 </li>
                 <li className="p-skills__article__item">
                   <figure className="p-skills__article__icon">
-                    <img
+                    <StaticImage
                       className="p-skills__article__icon__image"
-                      src="./assets/images/skills/ico_nodejs.png"
+                      src="../images/skills/ico_nodejs.png"
                       alt="nodejsアイコン"
                     />
                   </figure>
@@ -368,9 +365,9 @@ const IndexPage = () => {
                 </li>
                 <li className="p-skills__article__item">
                   <figure className="p-skills__article__icon">
-                    <img
+                    <StaticImage
                       className="p-skills__article__icon__image"
-                      src="./assets/images/skills/ico_gatsbyjs.png"
+                      src="../images/skills/ico_gatsbyjs.png"
                       alt=""
                     />
                   </figure>
@@ -385,10 +382,12 @@ const IndexPage = () => {
                 </li>
                 <li className="p-skills__article__item">
                   <figure className="p-skills__article__icon">
-                    <img
+                    <StaticImage
                       className="p-skills__article__icon__image"
-                      src="./assets/images/skills/ico_XD.png"
+                      src="../images/skills/ico_xd.png"
                       alt="xdのアイコン"
+											width={150}
+											height={150}
                     />
                   </figure>
                   <div className="p-skills__article__text-block">
@@ -402,9 +401,9 @@ const IndexPage = () => {
                 </li>
                 <li className="p-skills__article__item">
                   <figure className="p-skills__article__icon">
-                    <img
+                    <StaticImage
                       className="p-skills__article__icon__image"
-                      src="./assets/images/skills/ico_wbm.png"
+                      src="../images/skills/ico_wbm.png"
                       alt="ホワイトボードミーティングのアイコン"
                     />
                   </figure>
@@ -428,8 +427,8 @@ const IndexPage = () => {
               <ul className="p-services__list">
                 <li className="p-services__item">
                   <figure className="p-services__image-wrapepr">
-                    <img
-                      src="./assets/images/services/services-website.jpg"
+                    <StaticImage
+                      src="../images/services/services-website.jpg"
                       alt=""
                       className="p-services__image"
                     />
@@ -443,8 +442,8 @@ const IndexPage = () => {
                 </li>
                 <li className="p-services__item">
                   <figure className="p-services__image-wrapepr">
-                    <img
-                      src="./assets/images/services/services-coding.jpg"
+                    <StaticImage
+                      src="../images/services/services-coding.jpg"
                       alt=""
                       className="p-services__image"
                     />
@@ -458,8 +457,8 @@ const IndexPage = () => {
                 </li>
                 <li className="p-services__item">
                   <figure className="p-services__image-wrapepr">
-                    <img
-                      src="./assets/images/services/services-etc.jpg"
+                    <StaticImage
+                      src="../images/services/services-etc.jpg"
                       alt=""
                       className="p-services__image"
                     />
@@ -575,11 +574,11 @@ const IndexPage = () => {
         <footer className="l-footer js-footer">
           <figure className="l-footer__logo">
             <a href="#">
-              <img src="./assets/images/footer/footer-logo.png" alt="" />
+              <StaticImage src="../images/footer/footer-logo.png" alt="" />
             </a>
           </figure>
           <a href="/contact.html" className="l-footer__cv">
-            <img src="./assets/images/footer/footer-cv.png" alt="" />
+            <StaticImage src="../images/footer/footer-cv.png" alt="" />
           </a>
           <nav className="l-footer__nav">
             <ul className="l-footer__menu">
