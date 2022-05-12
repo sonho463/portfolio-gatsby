@@ -27,6 +27,9 @@ export const Footer = () => {
               <a href="#skills">スキル</a>
             </li>
             <li className="l-footer__menu__item">
+              <a href="#services">サービス</a>
+            </li>
+            <li className="l-footer__menu__item">
               <a href="#career">経歴</a>
             </li>
           </ul>

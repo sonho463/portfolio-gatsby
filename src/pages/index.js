@@ -224,7 +224,7 @@ const IndexPage = () => {
               </ul>
             </div>
           </section>
-          <section className="p-services c-section">
+          <section id="services" className="p-services c-section">
             <div className="c-inner">
               <div className="c-section__title">
                 <h2 className="c-section__title__text">サービス</h2>
