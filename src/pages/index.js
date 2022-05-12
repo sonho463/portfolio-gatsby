@@ -2,9 +2,9 @@ import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { useInView } from "react-intersection-observer";
 
-import { Layout } from "../components/Layout";
-import { SwiperWorks } from "../components/SwiperWorks";
-import { Wrapper } from "../components/Wrapper";
+import {Layout} from "../components/Layout";
+import {SwiperWorks} from "../components/SwiperWorks";
+import {Wrapper} from "../components/Wrapper";
 
 // markup
 const IndexPage = () => {
