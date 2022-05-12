@@ -2,9 +2,9 @@ import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { useInView } from "react-intersection-observer";
 
-import {Layout} from "../components/Layout";
-import {SwiperWorks} from "../components/SwiperWorks";
-import {Wrapper} from "../components/Wrapper";
+import { Layout } from "../components/Layout";
+import { SwiperWorks } from "../components/SwiperWorks";
+import { Wrapper } from "../components/Wrapper";
 
 // markup
 const IndexPage = () => {
@@ -192,7 +192,7 @@ const IndexPage = () => {
                     <StaticImage
                       className="p-skills__article__icon__image"
                       src="../images/skills/ico_xd.png"
-                      alt="xdのアイコン"
+                      alt="XDのアイコン"
                     />
                   </figure>
                   <div className="p-skills__article__text-block">
