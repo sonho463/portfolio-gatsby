@@ -4,8 +4,8 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `portfolio-gatsby`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `そんほんすポートフォリオ`,
+    siteUrl: `https://www.portfolio-gatsby-2022.netlify.app`,
   },
   plugins: [
     "gatsby-plugin-sass",

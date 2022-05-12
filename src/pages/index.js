@@ -187,20 +187,20 @@ const IndexPage = () => {
                     </p>
                   </div>
                 </li>
-                <li className="p-skills__article__item">
+								<li className="p-skills__article__item">
                   <figure className="p-skills__article__icon">
                     <StaticImage
                       className="p-skills__article__icon__image"
-                      src="../images/skills/ico_xd.png"
-                      alt="XDのアイコン"
+                      src="../images/skills/ico_gatsbyjs.png"
+                      alt=""
                     />
                   </figure>
                   <div className="p-skills__article__text-block">
                     <h3 className="p-skills__article__title c-title">
-                      AdobeXD
+                      Gatsby.js
                     </h3>
                     <p className="p-skills__article__text c-desc">
-                      デザインは主にAdobeXDを使用しています。コンポーネント、レイヤーを意識して、見やすく、コーディングもしやすいデザインを作成します。
+                      静的サイトジェネレータGatsbyのテーマを使って、サイトを構築できます。また、ブログのHTML，CSSデータをGtasbyで構築しました。
                     </p>
                   </div>
                 </li>
