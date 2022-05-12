@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
 import { StaticImage } from "gatsby-plugin-image";
-
+import { Link }  from "gatsby";
 
 export const Header = () => {
   return (
@@ -14,46 +14,42 @@ export const Header = () => {
         <nav className="p-g-nav js-g-nav">
           <ul className="p-g-nav__inner">
             <li className="p-g-nav__item">
-              <a href="#about" className="p-g-nav__link p-g-nav__link--about">
+              <Link to="#about" className="p-g-nav__link p-g-nav__link--about">
                 アバウト
-              </a>
+              </Link>
             </li>
             <li className="p-g-nav__item">
-              <a href="#works" className="p-g-nav__link p-g-nav__link--works">
+              <Link to="#works" className="p-g-nav__link p-g-nav__link--works">
                 実績
-              </a>
+              </Link>
             </li>
             <li className="p-g-nav__item">
-              <a href="#skills" className="p-g-nav__link p-g-nav__link--skills">
+              <Link to="#skills" className="p-g-nav__link p-g-nav__link--skills">
                 スキル
-              </a>
+              </Link>
             </li>
             <li className="p-g-nav__item p-g-nav__item--icon">
-              <a href="/" className="p-g-nav__link--icon">
+              <Link to="/" className="p-g-nav__link--icon">
                 <StaticImage
                   src="../images/header/ico_webson.png"
                   alt="ウェブソンのアイコン"
                 />
-              </a>
+              </Link>
             </li>
             <li className="p-g-nav__item">
-              <a
-                href="#services"
-                className="p-g-nav__link p-g-nav__link--services"
-              >
+              <Link to="#services" className="p-g-nav__link p-g-nav__link--services">
                 サービス
-              </a>
+              </Link>
             </li>
             <li className="p-g-nav__item">
-              <a href="#career" className="p-g-nav__link p-g-nav__link--career">
+              <Link to="#career" className="p-g-nav__link p-g-nav__link--career">
                 経歴
-              </a>
+              </Link>
             </li>
             <li className="p-g-nav__item">
-              <a
-                href="javascript:void(0)"
-                className="p-g-nav__link p-g-nav__link--contact"
-              ></a>
+              <Link to="/" className="p-g-nav__link p-g-nav__link--contact">
+								コンタクト
+							</Link>
             </li>
           </ul>
         </nav>

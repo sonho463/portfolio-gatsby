@@ -1,5 +1,7 @@
 import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
+import { Link }  from "gatsby";
+
 
 // import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
@@ -15,7 +17,7 @@ import "swiper/css/scrollbar";
 export const SwiperWorks = () => {
   return (
     <Swiper
-		className="p-works__card-outer"
+      className="p-works__card-outer"
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={30}
@@ -46,13 +48,13 @@ export const SwiperWorks = () => {
             <p className="p-works__text">
               新規採用者に向けて組合を紹介するLPを作成。静的サイト。netlifyでホスティング。
             </p>
-            <a href="#" className="p-works__nav-to-detail">
+            <Link to="#" className="p-works__nav-to-detail">
               <StaticImage
                 src="../images/works/view-details.png"
                 className="p-works__nav-to-detail__image"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
         </div>
       </SwiperSlide>
@@ -76,13 +78,13 @@ export const SwiperWorks = () => {
             <p className="p-works__text">
               新規採用者に向けて組合を紹介するLPを作成。静的サイト。netlifyでホスティング。
             </p>
-            <a href="#" className="p-works__nav-to-detail">
+            <Link to="#" className="p-works__nav-to-detail">
               <StaticImage
                 src="../images/works/view-details.png"
                 className="p-works__nav-to-detail__image"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
         </div>
       </SwiperSlide>
@@ -106,13 +108,13 @@ export const SwiperWorks = () => {
             <p className="p-works__text">
               新規採用者に向けて組合を紹介するLPを作成。静的サイト。netlifyでホスティング。
             </p>
-            <a href="#" className="p-works__nav-to-detail">
+            <Link to="#" className="p-works__nav-to-detail">
               <StaticImage
                 src="../images/works/view-details.png"
                 className="p-works__nav-to-detail__image"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
         </div>
       </SwiperSlide>
@@ -136,17 +138,16 @@ export const SwiperWorks = () => {
             <p className="p-works__text">
               新規採用者に向けて組合を紹介するLPを作成。静的サイト。netlifyでホスティング。
             </p>
-            <a href="#" className="p-works__nav-to-detail">
+            <Link to="#" className="p-works__nav-to-detail">
               <StaticImage
                 src="../images/works/view-details.png"
                 className="p-works__nav-to-detail__image"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
         </div>
       </SwiperSlide>
-
     </Swiper>
   );
 };

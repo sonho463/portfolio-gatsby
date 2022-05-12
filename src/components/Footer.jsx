@@ -1,36 +1,35 @@
 import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import { Wrapper } from "./Wrapper";
+import { Link }  from "gatsby";
 
 export const Footer = () => {
-
 
   return (
       <footer className="l-footer js-footer">
         <figure className="l-footer__logo js-footer__logo">
-          <a href="#">
+          <Link to="#">
             <StaticImage src="../images/footer/footer-logo.png" alt="" />
-          </a>
+          </Link>
         </figure>
-        <a href="/contact.html" className="l-footer__cv">
+        <Link to="/contact.html" className="l-footer__cv">
           <StaticImage src="../images/footer/footer-cv.png" alt="" />
-        </a>
+        </Link>
         <nav className="l-footer__nav">
           <ul className="l-footer__menu">
             <li className="l-footer__menu__item">
-              <a href="#about">アバウト</a>
+              <Link to="#about">アバウト</Link>
             </li>
             <li className="l-footer__menu__item">
-              <a href="#works">実績</a>
+              <Link to="#works">実績</Link>
             </li>
             <li className="l-footer__menu__item">
-              <a href="#skills">スキル</a>
+              <Link to="#skills">スキル</Link>
             </li>
             <li className="l-footer__menu__item">
-              <a href="#services">サービス</a>
+              <Link to="#services">サービス</Link>
             </li>
             <li className="l-footer__menu__item">
-              <a href="#career">経歴</a>
+              <Link to="#career">経歴</Link>
             </li>
           </ul>
         </nav>
