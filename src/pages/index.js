@@ -187,7 +187,7 @@ const IndexPage = () => {
                     </p>
                   </div>
                 </li>
-								<li className="p-skills__article__item">
+                <li className="p-skills__article__item">
                   <figure className="p-skills__article__icon">
                     <StaticImage
                       className="p-skills__article__icon__image"
@@ -196,11 +196,9 @@ const IndexPage = () => {
                     />
                   </figure>
                   <div className="p-skills__article__text-block">
-                    <h3 className="p-skills__article__title c-title">
-                      Gatsby.js
-                    </h3>
+                    <h3 className="p-skills__article__title c-title">XD</h3>
                     <p className="p-skills__article__text c-desc">
-                      静的サイトジェネレータGatsbyのテーマを使って、サイトを構築できます。また、ブログのHTML，CSSデータをGtasbyで構築しました。
+                      デザインは主にAdobeXDを使用しています。コンポーネント、レイヤーを意識して、見やすく、コーディングもしやすいデザインを作成します。
                     </p>
                   </div>
                 </li>
