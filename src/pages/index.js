@@ -191,7 +191,7 @@ const IndexPage = () => {
                   <figure className="p-skills__article__icon">
                     <StaticImage
                       className="p-skills__article__icon__image"
-                      src="../images/skills/ico_gatsbyjs.png"
+                      src="../images/skills/xd_icon.png"
                       alt=""
                     />
                   </figure>
