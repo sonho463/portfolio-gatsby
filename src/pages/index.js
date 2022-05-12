@@ -1,10 +1,9 @@
 import * as React from "react";
-import { Helmet } from "react-helmet";
 import { StaticImage } from "gatsby-plugin-image";
-import { SwiperWorks } from "../components/SwiperWorks";
-// import { useEffect } from "react";
-import { Footer } from "../components/Footer";
 import { useInView } from "react-intersection-observer";
+
+import { Layout } from "../components/Layout";
+import { SwiperWorks } from "../components/SwiperWorks";
 import { Wrapper } from "../components/Wrapper";
 
 // markup
@@ -14,89 +13,15 @@ const IndexPage = () => {
   let month = d.getMonth() + 1;
   let day = d.getDate();
 
+  // react-intersection-observer init
   const { ref, inView } = useInView({
     threshold: 0.5,
   });
-
-	console.log(inView);
+  console.log(inView);
 
   return (
     <>
-      <Helmet>
-        <title>WEBSON・そんほんす</title>
-      </Helmet>
-
-      <div className="overflow-hidden">
-        <header className="l-header">
-          <nav className="p-g-nav js-g-nav">
-            <ul className="p-g-nav__inner">
-              <li className="p-g-nav__item">
-                <a href="#about" className="p-g-nav__link p-g-nav__link--about">
-                  アバウト
-                </a>
-              </li>
-              <li className="p-g-nav__item">
-                <a href="#works" className="p-g-nav__link p-g-nav__link--works">
-                  実績
-                </a>
-              </li>
-              <li className="p-g-nav__item">
-                <a
-                  href="#skills"
-                  className="p-g-nav__link p-g-nav__link--skills"
-                >
-                  スキル
-                </a>
-              </li>
-              <li className="p-g-nav__item p-g-nav__item--icon">
-                <a href="/" className="p-g-nav__link--icon">
-                  <StaticImage
-                    src="../images/header/ico_webson.png"
-                    alt="ウェブソンのアイコン"
-                  />
-                </a>
-              </li>
-              <li className="p-g-nav__item">
-                <a
-                  href="#services"
-                  className="p-g-nav__link p-g-nav__link--services"
-                >
-                  サービス
-                </a>
-              </li>
-              <li className="p-g-nav__item">
-                <a
-                  href="#career"
-                  className="p-g-nav__link p-g-nav__link--career"
-                >
-                  経歴
-                </a>
-              </li>
-              <li className="p-g-nav__item">
-                <a
-                  href="javascript:void(0)"
-                  className="p-g-nav__link p-g-nav__link--contact"
-                ></a>
-              </li>
-            </ul>
-          </nav>
-          {/* <div class="p-hamburger-btn js-hamburger-btn">
-				<span class="p-hamburger-btn__line"></span>
-				<span class="p-hamburger-btn__line"></span>
-				<span class="p-hamburger-btn__line"></span>
-			</div> */}
-        </header>
-
-        {/* <nav className="l-cv-button js-cv-button">
-          <a href="/contact.html" className="l-cv-button__link">
-            <StaticImage
-              className="l-cv-button__image"
-              src="../images/mv/cv-button.png"
-              alt="お問い合わせ"
-            />
-          </a>
-        </nav> */}
-
+      <Layout>
         <div className="l-main">
           <section className="p-mv">
             <div className="c-inner">
@@ -455,9 +380,7 @@ const IndexPage = () => {
         <Wrapper inView={inView}>
           <div ref={ref}></div>
         </Wrapper>
-        <Footer />
-
-      </div>
+      </Layout>
     </>
   );
 };
