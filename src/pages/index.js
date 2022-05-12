@@ -6,6 +6,7 @@ import { Layout } from "../components/Layout";
 import { SwiperWorks } from "../components/SwiperWorks";
 import { Wrapper } from "../components/Wrapper";
 
+
 // markup
 const IndexPage = () => {
   // 今日の日付変数
@@ -18,6 +19,8 @@ const IndexPage = () => {
     threshold: 0.5,
   });
   console.log(inView);
+
+
 
   return (
     <>

@@ -1,13 +1,10 @@
 import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import { Link }  from "gatsby";
-
+import { Link } from "gatsby";
 
 // import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -21,12 +18,22 @@ export const SwiperWorks = () => {
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={30}
-      slidesPerView={3}
+      slidesPerView={1}
       navigation
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}
+			breakpoints={{
+				// when window width is >= 640px
+				768: {
+					slidesPerView:2,
+				},
+				// when window width is >= 768px
+				1024: {
+					slidesPerView: 3,
+				},
+			}}
     >
       <SwiperSlide className="p-works__card-wrapper">
         <div className="p-works__card">

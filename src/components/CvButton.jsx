@@ -11,7 +11,7 @@ export const CvButton = ({ inView }) => {
         <span></span>
       ) : (
         <nav className="l-cv-button js-cv-button">
-          <Link to="/contact.html" className="l-cv-button__link">
+          <Link to="/contact" className="l-cv-button__link">
             <StaticImage
               className="l-cv-button__image"
               src="../images/mv/cv-button.png"

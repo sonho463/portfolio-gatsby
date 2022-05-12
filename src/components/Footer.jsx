@@ -7,11 +7,11 @@ export const Footer = () => {
   return (
       <footer className="l-footer js-footer">
         <figure className="l-footer__logo js-footer__logo">
-          <Link to="#">
+          <Link to="/">
             <StaticImage src="../images/footer/footer-logo.png" alt="" />
           </Link>
         </figure>
-        <Link to="/contact.html" className="l-footer__cv">
+        <Link to="/contact" className="l-footer__cv">
           <StaticImage src="../images/footer/footer-cv.png" alt="" />
         </Link>
         <nav className="l-footer__nav">
