@@ -68,4 +68,7 @@ a:hover img {
 .content{
 	padding-top: 110px;
 	flex: 1;
+	@include v.mq(lg){
+		padding-top: 0;
+	}
 }

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Layout } from "../components/Layout";
 import { Link, graphql } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,6 +14,16 @@ import "swiper/css/scrollbar";
 const WorkPost = ({ data }) => {
   const worksData = data.microcmsWorksMain;
   const worksEdges = data.allMicrocmsWorksMain.edges;
+
+  console.log(worksData.scope_responsibility);
+
+  const scopeResponsibility = [];
+
+  worksData.scope_responsibility.map((e) => {
+    console.log(e);
+    scopeResponsibility.push(<span className="scope-item">{e}</span>);
+  });
+
   return (
     <Layout>
       <div class="l-main">
@@ -24,16 +35,19 @@ const WorkPost = ({ data }) => {
               </h2>
             </div>
             <div id={worksData.works_slug} className="p-work__container">
-              <div
-                class="p-work__title-outer p-about__bg"
-              >
+              <div class="p-work__title-outer p-about__bg">
                 <div class="p-work__title-block">
                   <div class="p-work__title">
+                    <span className="p-work__tag">
+                      {worksData.works_tag.name}
+                    </span>
                     <h2 class="p-work__title__text">{worksData.works_title}</h2>
                   </div>
                   <div class="p-work__scope">
                     <span class="p-work__scope__heading">担当工程</span>
-                    <h3 class="p-work__scope__text">デザイン・コーディング</h3>
+                    <h3 class="p-work__scope__text">
+											{scopeResponsibility}
+                    </h3>
                   </div>
                   <div class="p-work__desc">
                     <p class="p-work__desc__text">
@@ -47,13 +61,24 @@ const WorkPost = ({ data }) => {
                   <figure class="p-work__image-wrapper">
                     <img src={worksData.works_image.url} alt="" />
                   </figure>
-                  <a
-                    href={`${worksData.link_original}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <p className="u-text-white">サイトへのリンクはこちら</p>
-                  </a>
+                  <div className="p-work__link-block">
+                    {worksData.link_original ? (
+                      <a
+                        href={`${worksData.link_original}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="c-button__work-template"
+                      >
+                        <StaticImage src="../images/works/to-site.png" alt="" />
+                      </a>
+                    ) : null}
+                    <Link
+                      to="/#works"
+                      className="c-button__work-template p-work__back-button"
+                    >
+                      <StaticImage src="../images/works/back.png" alt="" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -64,10 +89,11 @@ const WorkPost = ({ data }) => {
                 className="p-work__card-outer"
                 // install Swiper modules
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
-                spaceBetween={30}
+                spaceBetween={5}
                 slidesPerView={3}
+                centeredSlides={true}
                 navigation
-                pagination={{ clickable: true }}
+                // pagination={{ clickable: false }}
                 // scrollbar={{ draggable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log("slide change")}
@@ -78,7 +104,7 @@ const WorkPost = ({ data }) => {
                   },
                   // when window width is >= 768px
                   1024: {
-                    slidesPerView: 7,
+                    slidesPerView: 6.7,
                   },
                 }}
               >
@@ -116,6 +142,7 @@ export const query = graphql`
       works_title
       works_slug
       link_original
+      scope_responsibility
       works_image {
         url
       }

@@ -1,0 +1,9 @@
+@use "../foundation/variables" as v;
+
+.c-button__work-template{
+display: inline-block;
+	width: 120px;
+	@include v.mq(lg){
+		width: 80px;
+	}
+}

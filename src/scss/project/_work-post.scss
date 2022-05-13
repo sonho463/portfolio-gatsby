@@ -2,7 +2,10 @@
 
 
 .p-work__container{
-	padding-top: 200px;
+	padding-top: 120px;
+	@include v.mq(sm){
+		padding-top: 60px;
+	}
 }
 
 .p-work__title-outer{
@@ -10,7 +13,8 @@
 	display: flex;
 	padding: 50px 5%;
 	@include v.mq(md){
-		flex-direction: column-reverse;
+		padding: 20px 2%;
+		flex-direction: column;
 	}
 }
 
@@ -19,12 +23,21 @@
 	flex:1;
 	padding: 20px 8%;
 }
-
+.p-work__tag{
+	font-size: 2.4rem;
+}
 .p-work__title__text {
   font-size: 4.2rem;
 }
 .p-work__scope__text {
   font-size: 3.2rem;
+}
+.scope-item{
+	margin-left: 20px;
+	&:not(:last-of-type)::after{
+		content: '/';
+		margin-left: 20px;
+	}
 }
 .p-work__desc__text {
   font-size: 2.0rem;
@@ -32,6 +45,20 @@
 
 .p-work__image-block{
 	flex:0.7;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.p-work__image-wrapper{
+	height: 400px;
+	overflow: scroll;
+
+}
+
+.p-work__link-block{
+	margin-top: 30px;
 }
 
 .p-work__card-outer{
@@ -40,4 +67,16 @@
 
 .p-work__card-wrapper{
 	background-color: v.$color-white;
+	padding: 10px;
+	figure{
+		height: 100px;
+		overflow: hidden;
+
+	}
+}
+.p-work .c-section__title{
+	margin-bottom: 0;
+	@include v.mq(sm){
+		padding-top: 50px;
+	}
 }
