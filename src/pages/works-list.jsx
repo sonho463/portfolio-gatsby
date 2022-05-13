@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
 import { Layout } from "../components/Layout";
+import { graphql } from "gatsby";
 // import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y, Thumbs } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,37 +12,35 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/thumbs";
 
-const WorksList = () => {
+import { SwiperWorks } from "../components/SwiperWorks";
+
+export default ({ data }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  console.log(`${thumbsSwiper}-----1`);
   const slides = [];
-  for (let i = 0; i < 10; i += 1) {
+  const worksEdges = data.allMicrocmsWorksMain.edges;
+  let i = 0;
+  worksEdges.map(({ node }) => {
+    i += 1;
     slides.push(
-      <SwiperSlide key={`slide-${i}`} tag="li">
-        <img
-          src={`https://picsum.photos/id/${i + 1020}/500/300`}
-          alt={`slide ${i}`}
-        />
+      <SwiperSlide key={node.id} tag="li">
+        <img src={node.works_image.url} alt={`slide ${i}`} />
+        <p>{node.works_title}</p>
       </SwiperSlide>
     );
-  }
+  });
 
   const thumbs = [];
-  for (let i = 0; i < 10; i += 1) {
+  let j = 0;
+  worksEdges.map(({ node }) => {
+    j += 1;
     thumbs.push(
-      <SwiperSlide key={`thumb-${i}`} tag="li">
-        <img
-          src={`https://picsum.photos/id/${i + 1020}/163/100`}
-          alt={`slide ${i}`}
-        />
+      <SwiperSlide key={node.id} tag="li">
+        <img src={node.works_image.url} alt={`slide ${j}`} />
       </SwiperSlide>
     );
-  }
-	console.log(`${thumbsSwiper}----2`);
-
+  });
   return (
     <Layout>
-			{ 	console.log(`${thumbsSwiper}----3`) }
       <Swiper
         id="main"
         tag="section"
@@ -52,10 +51,8 @@ const WorksList = () => {
         pagination={{ clickable: true }}
         slidesPerView={1}
       >
-					{ 	console.log(`${thumbsSwiper}----4`) }
         {slides}
       </Swiper>
-			{ 	console.log(`${thumbsSwiper}----5`) }
       <Swiper
         id="thumbs"
         tag="section"
@@ -68,8 +65,24 @@ const WorksList = () => {
       >
         {thumbs}
       </Swiper>
+
+      <SwiperWorks />
     </Layout>
   );
 };
 
-export default WorksList;
+export const query = graphql`
+  query {
+    allMicrocmsWorksMain(sort: { order: ASC, fields: createdAt }) {
+      edges {
+        node {
+          works_title
+          id
+          works_image {
+            url
+          }
+        }
+      }
+    }
+  }
+`;

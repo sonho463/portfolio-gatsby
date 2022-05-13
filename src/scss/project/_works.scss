@@ -12,11 +12,10 @@
 		}
   }
 	&__card-wrapper{
-		width: 32%;
-
+		width: 30%;
 	}
   &__card {
-		padding: 32px 5%;
+		padding: 32px 8%;
 		height: 100%;
     // width: 100%;
     @include v.mq(lg) {
@@ -49,7 +48,7 @@
 .p-works {
   &__drop {
     height: auto;
-		min-height: 300px;
+		min-height: 250px;
     background-color: v.$main-secondary;
     border: solid 1px v.$color-border-gray;
     border-bottom-left-radius: 50%;
@@ -69,19 +68,30 @@
   &__title {
     // font-family: v.$title-font;
     font-size: 2.4rem;
-		line-height: 1.1;
+		line-height: 1.2;
     font-weight: bold;
 		min-height: 60px;
+		@include v.mq(lg){
+			font-size: 1.8rem;
+			min-height: 45px;
+		}
   }
 	&__image{
 		margin-top: 10px;
+		max-height: 80px;
+		@include v.mq(lg){
+			height: 80px;
+		}
 	}
   &__text {
     margin-top: 40px;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     letter-spacing: 0.05em;
-    padding-bottom: 80px;
+		height: 100px;
+		margin-bottom: 70px;
+		overflow:hidden;
     @include v.mq(lg) {
+			margin-bottom: 40px;
       font-size: 1.8rem;
     }
   }
@@ -128,8 +138,4 @@
 //   &::after {
 //     display: none;
 //   }
-// }
-
-// .swiper-slide{
-// 	height: auto;
 // }

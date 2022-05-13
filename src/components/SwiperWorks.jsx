@@ -12,6 +12,21 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 export const SwiperWorks = () => {
+  const data = graphql`
+    query {
+      allMicrocmsWorksMain(sort: { order: ASC, fields: createdAt }) {
+        edges {
+          node {
+            works_title
+            id
+            works_image {
+              url
+            }
+          }
+        }
+      }
+    }
+  `;
   return (
     <Swiper
       className="p-works__card-outer"
@@ -24,137 +39,45 @@ export const SwiperWorks = () => {
       scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}
-			breakpoints={{
-				// when window width is >= 640px
-				768: {
-					slidesPerView:2,
-				},
-				// when window width is >= 768px
-				1024: {
-					slidesPerView: 3,
-				},
-			}}
+      breakpoints={{
+        // when window width is >= 640px
+        768: {
+          slidesPerView: 2,
+        },
+        // when window width is >= 768px
+        1024: {
+          slidesPerView: 3,
+        },
+      }}
     >
-      <SwiperSlide className="p-works__card-wrapper">
-        <div className="p-works__card">
-          <div className="p-works__card__inner">
-            <div className="p-works__drop">
-              <div className="p-works__drop__inner">
-                <span className="p-works__tag">ウェブ制作</span>
-                <h3 className="p-works__title">
-                  八尾市教職員組合新規採用者用LP
-                </h3>
-                <figure className="p-works__image">
-                  <StaticImage
-                    src="../images/works/works-ytu-rookies.png"
-                    alt=""
-                  />
-                </figure>
+        <SwiperSlide className="p-works__card-wrapper">
+          <div className="p-works__card">
+            <div className="p-works__card__inner">
+              <div className="p-works__drop">
+                <div className="p-works__drop__inner">
+                  <span className="p-works__tag">ウェブ制作</span>
+                  <h3 className="p-works__title">タイトル</h3>
+                  <figure className="p-works__image">
+                    <StaticImage
+                      src="../images/works/works-ytu-rookies.png"
+                      alt=""
+                    />
+                  </figure>
+                </div>
               </div>
+              <p className="p-works__text">
+                新規採用者に向けて組合を紹介するLPを作成。静的サイト。netlifyでホスティング。
+              </p>
+              <Link to="#" className="p-works__nav-to-detail">
+                <StaticImage
+                  src="../images/works/view-details.png"
+                  className="p-works__nav-to-detail__image"
+                  alt=""
+                />
+              </Link>
             </div>
-            <p className="p-works__text">
-              新規採用者に向けて組合を紹介するLPを作成。静的サイト。netlifyでホスティング。
-            </p>
-            <Link to="#" className="p-works__nav-to-detail">
-              <StaticImage
-                src="../images/works/view-details.png"
-                className="p-works__nav-to-detail__image"
-                alt=""
-              />
-            </Link>
           </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className="p-works__card-wrapper">
-        <div className="p-works__card">
-          <div className="p-works__card__inner">
-            <div className="p-works__drop">
-              <div className="p-works__drop__inner">
-                <span className="p-works__tag">ウェブ制作</span>
-                <h3 className="p-works__title">
-                  八尾市教職員組合新規採用者用LP
-                </h3>
-                <figure className="p-works__image">
-                  <StaticImage
-                    src="../images/works/works-ytu-rookies.png"
-                    alt=""
-                  />
-                </figure>
-              </div>
-            </div>
-            <p className="p-works__text">
-              新規採用者に向けて組合を紹介するLPを作成。静的サイト。netlifyでホスティング。
-            </p>
-            <Link to="#" className="p-works__nav-to-detail">
-              <StaticImage
-                src="../images/works/view-details.png"
-                className="p-works__nav-to-detail__image"
-                alt=""
-              />
-            </Link>
-          </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className="p-works__card-wrapper">
-        <div className="p-works__card">
-          <div className="p-works__card__inner">
-            <div className="p-works__drop">
-              <div className="p-works__drop__inner">
-                <span className="p-works__tag">ウェブ制作</span>
-                <h3 className="p-works__title">
-                  八尾市教職員組合新規採用者用LP
-                </h3>
-                <figure className="p-works__image">
-                  <StaticImage
-                    src="../images/works/works-ytu-rookies.png"
-                    alt=""
-                  />
-                </figure>
-              </div>
-            </div>
-            <p className="p-works__text">
-              新規採用者に向けて組合を紹介するLPを作成。静的サイト。netlifyでホスティング。
-            </p>
-            <Link to="#" className="p-works__nav-to-detail">
-              <StaticImage
-                src="../images/works/view-details.png"
-                className="p-works__nav-to-detail__image"
-                alt=""
-              />
-            </Link>
-          </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide className="p-works__card-wrapper">
-        <div className="p-works__card">
-          <div className="p-works__card__inner">
-            <div className="p-works__drop">
-              <div className="p-works__drop__inner">
-                <span className="p-works__tag">ウェブ制作</span>
-                <h3 className="p-works__title">
-                  八尾市教職員組合新規採用者用LP
-                </h3>
-                <figure className="p-works__image">
-                  <StaticImage
-                    src="../images/works/works-ytu-rookies.png"
-                    alt=""
-                  />
-                </figure>
-              </div>
-            </div>
-            <p className="p-works__text">
-              新規採用者に向けて組合を紹介するLPを作成。静的サイト。netlifyでホスティング。
-            </p>
-            <Link to="#" className="p-works__nav-to-detail">
-              <StaticImage
-                src="../images/works/view-details.png"
-                className="p-works__nav-to-detail__image"
-                alt=""
-              />
-            </Link>
-          </div>
-        </div>
-      </SwiperSlide>
+        </SwiperSlide>;
     </Swiper>
   );
 };

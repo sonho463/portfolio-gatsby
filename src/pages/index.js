@@ -1,14 +1,21 @@
 import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { useInView } from "react-intersection-observer";
-
+import { Link, graphql } from "gatsby";
 import { Layout } from "../components/Layout";
-import { SwiperWorks } from "../components/SwiperWorks";
+// import { SwiperWorks } from "../components/SwiperWorks";
 import { Wrapper } from "../components/Wrapper";
-
+// import Swiper core and required modules
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 // markup
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   // 今日の日付変数
   let d = new Date();
   let month = d.getMonth() + 1;
@@ -18,9 +25,8 @@ const IndexPage = () => {
   const { ref, inView } = useInView({
     threshold: 0.5,
   });
-  console.log(inView);
 
-
+  const worksEdges = data.allMicrocmsWorksMain.edges;
 
   return (
     <>
@@ -112,7 +118,56 @@ const IndexPage = () => {
                   制作実績・これまでの活動
                 </h2>
               </div>
-              <SwiperWorks />
+              <Swiper
+                className="p-works__card-outer"
+                // install Swiper modules
+                modules={[Navigation, Pagination, Scrollbar, A11y]}
+                spaceBetween={30}
+                slidesPerView={1}
+                navigation
+                pagination={{ clickable: true }}
+                scrollbar={{ draggable: true }}
+                onSwiper={(swiper) => console.log(swiper)}
+                onSlideChange={() => console.log("slide change")}
+                breakpoints={{
+                  // when window width is >= 640px
+                  768: {
+                    slidesPerView: 2,
+                  },
+                  // when window width is >= 768px
+                  1024: {
+                    slidesPerView: 3,
+                  },
+                }}
+              >
+								{worksEdges.map(({node})=>(
+                <SwiperSlide key={node.id} className="p-works__card-wrapper">
+                  <div className="p-works__card">
+                    <div className="p-works__card__inner">
+                      <div className="p-works__drop">
+                        <div className="p-works__drop__inner">
+                          <span className="p-works__tag">
+                            {node.works_tag.name}
+                          </span>
+                          <h3 className="p-works__title">{node.works_title}</h3>
+                          <figure className="p-works__image">
+                            <img src={node.works_image.url} alt="" />
+                          </figure>
+                        </div>
+                      </div>
+                      <p className="p-works__text">{node.works_desc}</p>
+                      <Link to="#" className="p-works__nav-to-detail">
+                        <StaticImage
+                          src="../images/works/view-details.png"
+                          className="p-works__nav-to-detail__image"
+                          alt=""
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                </SwiperSlide>
+								))}
+              </Swiper>
             </div>
           </section>
           <section id="skills" className="p-skills c-section">
@@ -385,5 +440,25 @@ const IndexPage = () => {
     </>
   );
 };
+
+export const query = graphql`
+  query {
+    allMicrocmsWorksMain(sort: { order: ASC, fields: createdAt }) {
+      edges {
+        node {
+          works_tag {
+            name
+          }
+          works_title
+          id
+          works_image {
+            url
+          }
+          works_desc
+        }
+      }
+    }
+  }
+`;
 
 export default IndexPage;
