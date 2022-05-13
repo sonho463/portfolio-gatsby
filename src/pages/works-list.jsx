@@ -13,7 +13,7 @@ import "swiper/css/thumbs";
 
 const WorksList = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
+  console.log(`${thumbsSwiper}-----1`);
   const slides = [];
   for (let i = 0; i < 10; i += 1) {
     slides.push(
@@ -37,8 +37,11 @@ const WorksList = () => {
       </SwiperSlide>
     );
   }
+	console.log(`${thumbsSwiper}----2`);
+
   return (
     <Layout>
+			{ 	console.log(`${thumbsSwiper}----3`) }
       <Swiper
         id="main"
         tag="section"
@@ -49,8 +52,10 @@ const WorksList = () => {
         pagination={{ clickable: true }}
         slidesPerView={1}
       >
+					{ 	console.log(`${thumbsSwiper}----4`) }
         {slides}
       </Swiper>
+			{ 	console.log(`${thumbsSwiper}----5`) }
       <Swiper
         id="thumbs"
         tag="section"
