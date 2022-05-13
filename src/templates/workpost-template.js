@@ -23,35 +23,39 @@ const WorkPost = ({ data }) => {
                 制作実績・これまでの活動
               </h2>
             </div>
-
-            <div
-              id={worksData.works_slug}
-              class="p-work__title-outer p-about__bg"
-            >
-              <div class="p-work__title-block">
-                <div class="p-work__title">
-                  <h2 class="p-work__title__text">{worksData.works_title}</h2>
+            <div id={worksData.works_slug} className="p-work__container">
+              <div
+                class="p-work__title-outer p-about__bg"
+              >
+                <div class="p-work__title-block">
+                  <div class="p-work__title">
+                    <h2 class="p-work__title__text">{worksData.works_title}</h2>
+                  </div>
+                  <div class="p-work__scope">
+                    <span class="p-work__scope__heading">担当工程</span>
+                    <h3 class="p-work__scope__text">デザイン・コーディング</h3>
+                  </div>
+                  <div class="p-work__desc">
+                    <p class="p-work__desc__text">
+                      自分の所属する八尾市教職員組合で使用。新規採用者に伝えたい内容をまとめました。
+                      団体のGoogleアカウントがあったので、コンタクトフォームはGoogleフォームを埋め込んで使用。
+                      誘導のための動線は主にフライヤーに貼ったQRコードを想定しました。
+                    </p>
+                  </div>
                 </div>
-                <div class="p-work__scope">
-                  <span class="p-work__scope__heading">担当工程</span>
-                  <h3 class="p-work__scope__text">デザイン・コーディング</h3>
-                </div>
-                <div class="p-work__desc">
-                  <p class="p-work__desc__text">
-                    自分の所属する八尾市教職員組合で使用。新規採用者に伝えたい内容をまとめました。
-                    団体のGoogleアカウントがあったので、コンタクトフォームはGoogleフォームを埋め込んで使用。
-                    誘導のための動線は主にフライヤーに貼ったQRコードを想定しました。
-                  </p>
+                <div className="p-work__image-block">
+                  <figure class="p-work__image-wrapper">
+                    <img src={worksData.works_image.url} alt="" />
+                  </figure>
+                  <a
+                    href={`${worksData.link_original}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <p className="u-text-white">サイトへのリンクはこちら</p>
+                  </a>
                 </div>
               </div>
-              <div className="p-work__image-block">
-								<figure class="p-work__image-wrapper">
-									<img src={worksData.works_image.url} alt="" />
-								</figure>
-								<a href={`${worksData.link_original}`} target="_blank" rel="noopener noreferrer">
-									<p className="u-text-white">サイトへのリンクはこちら</p>
-								</a>
-							</div>
             </div>
             <div class="p-work__picture"></div>
 
@@ -111,7 +115,7 @@ export const query = graphql`
     microcmsWorksMain(id: { eq: $id }) {
       works_title
       works_slug
-			link_original
+      link_original
       works_image {
         url
       }

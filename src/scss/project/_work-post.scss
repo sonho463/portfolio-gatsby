@@ -1,6 +1,12 @@
 @use "../foundation/variables" as v;
 
+
+.p-work__container{
+	padding-top: 200px;
+}
+
 .p-work__title-outer{
+	// margin-top: -200px;
 	display: flex;
 	padding: 50px 5%;
 	@include v.mq(md){
