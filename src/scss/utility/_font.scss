@@ -1,0 +1,5 @@
+@use "../foundation/variables" as v;
+
+.u-text-white{
+	color: v.$color-white !important;
+}

@@ -34,6 +34,7 @@
 @use "./project/carrer";
 @use "./project/hamburger";
 @use "./project/contact";
+@use "./project/work-post";
 
 // *--------------*
 // utility
@@ -41,3 +42,4 @@
 @use "./utility/margin";
 @use "./utility/display";
 @use "./utility/animation";
+@use "./utility/font";

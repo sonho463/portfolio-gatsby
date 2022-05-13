@@ -156,7 +156,7 @@ const IndexPage = ({ data }) => {
                         </div>
                       </div>
                       <p className="p-works__text">{node.works_desc}</p>
-                      <Link to={`/work/post/${node.works_slug}`} className="p-works__nav-to-detail">
+                      <Link to={`/work/post/${node.works_slug}#${node.works_slug}`} className="p-works__nav-to-detail">
                         <StaticImage
                           src="../images/works/view-details.png"
                           className="p-works__nav-to-detail__image"
