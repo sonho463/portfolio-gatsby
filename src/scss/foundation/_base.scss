@@ -59,3 +59,12 @@ a:hover img {
 	top: 0;right: 50px;
 	background-color: pink;
 }
+
+.container{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+.content{
+	flex: 1;
+}

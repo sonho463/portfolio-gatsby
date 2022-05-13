@@ -57,9 +57,9 @@ const WorksList = () => {
         wrapperTag="ul"
         onSwiper={setThumbsSwiper}
         modules={[Navigation, Thumbs]}
-				slidesPerView={3}
-				watchSlidesProgress={true}
-				navigation
+        slidesPerView={3}
+        watchSlidesProgress={true}
+        navigation
       >
         {thumbs}
       </Swiper>
