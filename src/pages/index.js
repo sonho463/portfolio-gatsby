@@ -126,7 +126,7 @@ const IndexPage = ({ data }) => {
                 slidesPerView={1}
                 navigation
                 pagination={{ clickable: true }}
-                scrollbar={{ draggable: true }}
+                // scrollbar={{ draggable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log("slide change")}
                 breakpoints={{
@@ -156,7 +156,7 @@ const IndexPage = ({ data }) => {
                         </div>
                       </div>
                       <p className="p-works__text">{node.works_desc}</p>
-                      <Link to="#" className="p-works__nav-to-detail">
+                      <Link to={`/work/post/${node.works_slug}`} className="p-works__nav-to-detail">
                         <StaticImage
                           src="../images/works/view-details.png"
                           className="p-works__nav-to-detail__image"
@@ -455,6 +455,7 @@ export const query = graphql`
             url
           }
           works_desc
+					works_slug
         }
       }
     }

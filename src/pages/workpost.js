@@ -13,8 +13,8 @@ const WorkPost = ({ data }) => {
 };
 
 export const query = graphql`
-  query ($id: String!){
-    microcmsWorksMain (id: {eq: $id}) {
+  query {
+    microcmsWorksMain {
       works_title
 			works_image{
 				url
