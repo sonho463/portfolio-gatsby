@@ -43,6 +43,12 @@ module.exports = {
           },
         ],
       },
-		}
+		},
+		{
+			resolve: 'gatsby-source-wordpress',
+			options: {
+				url: 'https://horumont.info/graphql',
+			}
+		},
   ],
 };
