@@ -3,6 +3,8 @@ import { Layout } from "../components/Layout";
 import { Link, graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
+import { ImageRender } from "../components/imageRender";
+
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -20,8 +22,8 @@ const WorkPost = ({ data }) => {
   const scopeResponsibility = [];
 
   worksData.scope_responsibility.map((e) => {
-    console.log(e);
     scopeResponsibility.push(<span className="scope-item">{e}</span>);
+    return scopeResponsibility;
   });
 
   return (
@@ -45,21 +47,20 @@ const WorkPost = ({ data }) => {
                   </div>
                   <div class="p-work__scope">
                     <span class="p-work__scope__heading">担当工程</span>
-                    <h3 class="p-work__scope__text">
-											{scopeResponsibility}
-                    </h3>
+                    <h3 class="p-work__scope__text">{scopeResponsibility}</h3>
                   </div>
                   <div class="p-work__desc">
-                    <p class="p-work__desc__text">
-                      自分の所属する八尾市教職員組合で使用。新規採用者に伝えたい内容をまとめました。
-                      団体のGoogleアカウントがあったので、コンタクトフォームはGoogleフォームを埋め込んで使用。
-                      誘導のための動線は主にフライヤーに貼ったQRコードを想定しました。
-                    </p>
+                    <p class="p-work__desc__text">{worksData.works_desc}</p>
                   </div>
                 </div>
                 <div className="p-work__image-block">
                   <figure class="p-work__image-wrapper">
-                    <img src={worksData.works_image.url} alt="" />
+                    <ImageRender
+                      url={worksData.works_image.url}
+                      alt={`${worksData.works_title}の画像`}
+                      compress="auto=compress"
+                      format="auto=format"
+                    />{" "}
                   </figure>
                   <div className="p-work__link-block">
                     {worksData.link_original ? (
@@ -82,8 +83,6 @@ const WorkPost = ({ data }) => {
                 </div>
               </div>
             </div>
-            <div class="p-work__picture"></div>
-
             <div>
               <Swiper
                 className="p-work__card-outer"
@@ -91,7 +90,7 @@ const WorkPost = ({ data }) => {
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={5}
                 slidesPerView={3}
-                centeredSlides={true}
+                // centeredSlides={true}
                 navigation
                 // pagination={{ clickable: false }}
                 // scrollbar={{ draggable: true }}
@@ -117,7 +116,12 @@ const WorkPost = ({ data }) => {
                         >
                           <div>
                             <figure>
-                              <img src={node.works_image.url} alt="" />
+                              <ImageRender
+                                url={node.works_image.url}
+                                alt={`${node.works_title}の画像`}
+                                compress="auto=compress"
+                                format="auto=format"
+                              />
                             </figure>
                             <span>{node.works_tag.name}</span>
                             <h3>{node.works_title}</h3>
@@ -142,6 +146,7 @@ export const query = graphql`
       works_title
       works_slug
       link_original
+      works_desc
       scope_responsibility
       works_image {
         url

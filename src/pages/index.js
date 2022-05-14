@@ -5,6 +5,7 @@ import { Link, graphql } from "gatsby";
 import { Layout } from "../components/Layout";
 // import { SwiperWorks } from "../components/SwiperWorks";
 import { Wrapper } from "../components/Wrapper";
+import { ImageRender } from "../components/imageRender";
 // import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -72,7 +73,7 @@ const IndexPage = ({ data }) => {
               <section className="p-about__bg">
                 <div className="p-about__text__block">
                   <div className="p-about__date-unit">
-                    <p className="p-about__date">
+                    <div className="p-about__date">
                       <span id="js_month" className="p-about__month">
                         {month}
                       </span>
@@ -81,7 +82,7 @@ const IndexPage = ({ data }) => {
                         {day}
                       </span>
                       日
-                    </p>
+                    </div>
                     <p className="p-about__charge">日直</p>
                     <p className="p-about__name">そんほんす</p>
                   </div>
@@ -140,33 +141,44 @@ const IndexPage = ({ data }) => {
                   },
                 }}
               >
-								{worksEdges.map(({node})=>(
-                <SwiperSlide key={node.id} className="p-works__card-wrapper">
-                  <div className="p-works__card">
-                    <div className="p-works__card__inner">
-                      <div className="p-works__drop">
-                        <div className="p-works__drop__inner">
-                          <span className="p-works__tag">
-                            {node.works_tag.name}
-                          </span>
-                          <h3 className="p-works__title">{node.works_title}</h3>
-                          <figure className="p-works__image">
-                            <img src={node.works_image.url} alt="" />
-                          </figure>
+                {worksEdges.map(({ node }) => (
+                  <SwiperSlide key={node.id} className="p-works__card-wrapper">
+                    <div className="p-works__card">
+                      <div className="p-works__card__inner">
+                        <div className="p-works__drop">
+                          <div className="p-works__drop__inner">
+                            <span className="p-works__tag">
+                              {node.works_tag.name}
+                            </span>
+                            <h3 className="p-works__title">
+                              {node.works_title}
+                            </h3>
+                            <figure className="p-works__image">
+                              <ImageRender
+                                url={node.works_image.url}
+                                alt={`${node.works_title}の画像`}
+                                compress="auto=compress"
+                                format="auto=format"
+                              />
+                              {/* <img src={node.works_image.url} alt={`${node.works_title} の画像`}/> */}
+                            </figure>
+                          </div>
                         </div>
+                        <p className="p-works__text">{node.works_desc}</p>
+                        <Link
+                          to={`/work/post/${node.works_slug}#${node.works_slug}`}
+                          className="p-works__nav-to-detail"
+                        >
+                          <StaticImage
+                            src="../images/works/view-details.png"
+                            className="p-works__nav-to-detail__image"
+                            alt=""
+                          />
+                        </Link>
                       </div>
-                      <p className="p-works__text">{node.works_desc}</p>
-                      <Link to={`/work/post/${node.works_slug}#${node.works_slug}`} className="p-works__nav-to-detail">
-                        <StaticImage
-                          src="../images/works/view-details.png"
-                          className="p-works__nav-to-detail__image"
-                          alt=""
-                        />
-                      </Link>
                     </div>
-                  </div>
-                </SwiperSlide>
-								))}
+                  </SwiperSlide>
+                ))}
               </Swiper>
             </div>
           </section>
@@ -455,7 +467,7 @@ export const query = graphql`
             url
           }
           works_desc
-					works_slug
+          works_slug
         }
       }
     }

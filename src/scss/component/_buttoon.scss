@@ -1,9 +1,12 @@
 @use "../foundation/variables" as v;
 
-.c-button__work-template{
-display: inline-block;
-	width: 120px;
-	@include v.mq(lg){
-		width: 80px;
+.c-button__work-template {
+  display: inline-block;
+  width: 120px;
+	&:hover{
+		opacity: .7;
 	}
+  @include v.mq(lg) {
+    width: 80px;
+  }
 }

@@ -29,6 +29,9 @@
 	top:20px;
 	right: 5%;
 	width: 10%;
+	&:hover{
+		opacity: .7;
+	}
 	@include v.mq(md){
 		position: static;
 		width: 20%;
