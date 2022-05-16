@@ -3,9 +3,9 @@ import { StaticImage } from "gatsby-plugin-image";
 import { useInView } from "react-intersection-observer";
 import { Link, graphql } from "gatsby";
 import { Layout } from "../components/Layout";
-// import { SwiperWorks } from "../components/SwiperWorks";
 import { Wrapper } from "../components/Wrapper";
 import { ImageRender } from "../components/imageRender";
+
 // import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -166,7 +166,7 @@ const IndexPage = ({ data }) => {
                         </div>
                         <p className="p-works__text">{node.works_desc}</p>
                         <Link
-                          to={`/work/post/${node.works_slug}#${node.works_slug}`}
+                          to={`/works/${node.works_slug}#${node.works_slug}`}
                           className="p-works__nav-to-detail"
                         >
                           <StaticImage

@@ -5,8 +5,8 @@ import { StaticImage } from "gatsby-plugin-image";
 
 import { ImageRender } from "../components/imageRender";
 
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -31,11 +31,11 @@ const WorkPost = ({ data }) => {
       <div class="l-main">
         <section class="p-work c-section">
           <div class="c-inner">
-            <div className="c-section__title">
+            {/* <div className="c-section__title">
               <h2 className="c-section__title__text">
                 制作実績・これまでの活動
               </h2>
-            </div>
+            </div> */}
             <div id={worksData.works_slug} className="p-work__container">
               <div class="p-work__title-outer p-about__bg">
                 <div class="p-work__title-block">
@@ -112,7 +112,7 @@ const WorkPost = ({ data }) => {
                     <div>
                       <div>
                         <Link
-                          to={`/work/post/${node.works_slug}#${node.works_slug}`}
+                          to={`/works/${node.works_slug}#${node.works_slug}`}
                         >
                           <div>
                             <figure>
