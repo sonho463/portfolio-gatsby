@@ -146,30 +146,7 @@ const WorkPost = ({ data }) => {
                     return null;
                   }
                 })}
-                {/* {worksEdges.map(({ node }) => (
-                  <SwiperSlide key={node.id} className="p-work__card-wrapper">
-                    <div>
-                      <div>
-                        <Link
-                          to={`/works/${node.works_slug}#${node.works_slug}`}
-                        >
-                          <div>
-                            <figure>
-                              <ImageRender
-                                url={node.works_image.url}
-                                alt={`${node.works_title}の画像`}
-                                compress="auto=compress"
-                                format="auto=format"
-                              />
-                            </figure>
-                            <span>{node.works_tag.name}</span>
-                            <h3>{node.works_title}</h3>
-                          </div>
-                        </Link>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                ))} */}
+              
               </Swiper>
             </div>
           </div>

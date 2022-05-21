@@ -1,13 +1,26 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
 import { StaticImage } from "gatsby-plugin-image";
-import { Link }  from "gatsby";
+import { Link } from "gatsby";
 
 export const Header = () => {
   return (
     <>
       <Helmet>
         <title>WEBSON・そんほんす</title>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-B88FLKC288"
+        ></script>
+        <script>
+          {`
+	window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B88FLKC288');
+	`}
+        </script>
       </Helmet>
 
       <header className="l-header">
@@ -24,7 +37,10 @@ export const Header = () => {
               </Link>
             </li>
             <li className="p-g-nav__item">
-              <Link to="/#skills" className="p-g-nav__link p-g-nav__link--skills">
+              <Link
+                to="/#skills"
+                className="p-g-nav__link p-g-nav__link--skills"
+              >
                 スキル
               </Link>
             </li>
@@ -37,19 +53,28 @@ export const Header = () => {
               </Link>
             </li>
             <li className="p-g-nav__item">
-              <Link to="/#services" className="p-g-nav__link p-g-nav__link--services">
+              <Link
+                to="/#services"
+                className="p-g-nav__link p-g-nav__link--services"
+              >
                 サービス
               </Link>
             </li>
             <li className="p-g-nav__item">
-              <Link to="/#career" className="p-g-nav__link p-g-nav__link--career">
+              <Link
+                to="/#career"
+                className="p-g-nav__link p-g-nav__link--career"
+              >
                 経歴
               </Link>
             </li>
             <li className="p-g-nav__item">
-              <Link to="/contact" className="p-g-nav__link p-g-nav__link--contact">
-								お問い合わせ
-							</Link>
+              <Link
+                to="/contact"
+                className="p-g-nav__link p-g-nav__link--contact"
+              >
+                お問い合わせ
+              </Link>
             </li>
           </ul>
         </nav>
