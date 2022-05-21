@@ -59,6 +59,9 @@
 
 .p-work__link-block{
 	margin-top: 30px;
+	a + a{
+		margin-left: 10px;
+	}
 }
 
 .p-work__card-outer{

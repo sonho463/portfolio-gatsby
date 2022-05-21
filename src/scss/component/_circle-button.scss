@@ -1,0 +1,23 @@
+@use "../foundation/variables" as v;
+
+
+
+
+.c-circle-button {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	&__inner{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		background-color: v.$main-secondary;
+		overflow: hidden;
+		border-radius: 50%;
+	}
+&__image{
+		width: 60%;
+	}
+}

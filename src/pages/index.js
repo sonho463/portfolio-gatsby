@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { useInView } from "react-intersection-observer";
 import { Link, graphql } from "gatsby";
 import { Layout } from "../components/Layout";
-import { Wrapper } from "../components/Wrapper";
+import { CvButtonWrapper } from "../components/CvButtonWrapper";
 import { ImageRender } from "../components/imageRender";
 
 // import Swiper core and required modules
@@ -445,9 +445,9 @@ const IndexPage = ({ data }) => {
             </div>
           </section>
         </div>
-        <Wrapper inView={inView}>
+        <CvButtonWrapper inView={inView}>
           <div ref={ref}></div>
-        </Wrapper>
+        </CvButtonWrapper>
       </Layout>
     </>
   );

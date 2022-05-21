@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
 import { ImageRender } from "../components/imageRender";
+import { CircleButton } from "../components/CircleButton";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
@@ -31,11 +32,6 @@ const WorkPost = ({ data }) => {
       <div class="l-main">
         <section class="p-work c-section">
           <div class="c-inner">
-            {/* <div className="c-section__title">
-              <h2 className="c-section__title__text">
-                制作実績・これまでの活動
-              </h2>
-            </div> */}
             <div id={worksData.works_slug} className="p-work__container">
               <div class="p-work__title-outer p-about__bg">
                 <div class="p-work__title-block">
@@ -64,21 +60,28 @@ const WorkPost = ({ data }) => {
                   </figure>
                   <div className="p-work__link-block">
                     {worksData.link_original ? (
-                      <a
-                        href={`${worksData.link_original}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="c-button__work-template"
-                      >
-                        <StaticImage src="../images/works/to-site.png" alt="" />
-                      </a>
+                      <CircleButton
+                        url={worksData.link_original}
+                        alt="実績のサイトへ"
+                        text="サイトへ"
+                        name="arrow_up"
+                      />
                     ) : null}
-                    <Link
-                      to="/#works"
-                      className="c-button__work-template p-work__back-button"
-                    >
-                      <StaticImage src="../images/works/back.png" alt="" />
-                    </Link>
+                    {worksData.git_hub_url ? (
+                      <CircleButton
+                        url={worksData.git_hub_url}
+                        alt="GitHubリポジトリへ"
+                        text="GitHub"
+                        name="arrow_side"
+                      />
+                    ) : null}
+
+                    <CircleButton
+                      url="/#works"
+                      alt="実績アーカイブページへ戻る"
+                      text="もどる"
+                      name="arrow_down"
+                    />
                   </div>
                 </div>
               </div>
@@ -107,7 +110,43 @@ const WorkPost = ({ data }) => {
                   },
                 }}
               >
-                {worksEdges.map(({ node }) => (
+                {worksEdges.map(({ node }) => {
+                  console.log(node.works_tag);
+                  console.log(worksData.works_tag);
+                  console.log(node.works_tag.name === worksData.works_tag.name);
+                  if (node.works_tag.name === worksData.works_tag.name) {
+                    return (
+                      <SwiperSlide
+                        key={node.id}
+                        className="p-work__card-wrapper"
+                      >
+                        <div>
+                          <div>
+                            <Link
+                              to={`/works/${node.works_slug}#${node.works_slug}`}
+                            >
+                              <div>
+                                <figure>
+                                  <ImageRender
+                                    url={node.works_image.url}
+                                    alt={`${node.works_title}の画像`}
+                                    compress="auto=compress"
+                                    format="auto=format"
+                                  />
+                                </figure>
+                                <span>{node.works_tag.name}</span>
+                                <h3>{node.works_title}</h3>
+                              </div>
+                            </Link>
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                    );
+                  } else {
+                    return null;
+                  }
+                })}
+                {/* {worksEdges.map(({ node }) => (
                   <SwiperSlide key={node.id} className="p-work__card-wrapper">
                     <div>
                       <div>
@@ -130,7 +169,7 @@ const WorkPost = ({ data }) => {
                       </div>
                     </div>
                   </SwiperSlide>
-                ))}
+                ))} */}
               </Swiper>
             </div>
           </div>
@@ -148,6 +187,7 @@ export const query = graphql`
       link_original
       works_desc
       scope_responsibility
+      git_hub_url
       works_image {
         url
       }

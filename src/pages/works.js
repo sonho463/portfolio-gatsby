@@ -25,6 +25,10 @@ const WorkPost = ({ data }) => {
 
   return (
     <Layout>
+<div className="p-works-archive__title">
+			<h2 className="p-works-archive__title__text">ウェブ制作</h2>
+</div>
+
       <Swiper
         className="p-work__card-outer"
         wrapperTag="ul"
@@ -84,6 +88,9 @@ const WorkPost = ({ data }) => {
       >
         {webDevSlides}
       </Swiper>
+
+
+
     </Layout>
   );
 };

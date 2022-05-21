@@ -59,16 +59,18 @@ export const RenderSwiper = () => {
     `
   );
 
-  // const studyList = [];
+  const studyList = [];
 
-  // data.study.edges.map(({ node }) => studyList.push(<p>{node.works_title}</p>));
+  data.study.edges.map(({ node }) => studyList.push(
+	<SwiperSlide>
+		<p>{node.works_title}</p>
+	</SwiperSlide>
+	));
 
-  // console.log(studyList);
+  console.log(studyList);
 
-	return(
-		<p>bbbbbbbbbb</p>
-	)
+	return studyList;
+
 
   // return <React.Fragment>{studyList}</React.Fragment>;
 };
-
