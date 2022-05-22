@@ -29,6 +29,18 @@ module.exports = {
       __key: "images",
     },
 		{
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "WEBSONそんほんすポートフォリオ",
+        short_name: "WEBSONそんほんす",
+        start_url: "/",
+        // background_color: "#ffea18",
+        // theme_color: "#5155c0",
+        display: "standalone",
+        icon: "favicon.png",
+      },
+    },
+		{
 			resolve: "gatsby-plugin-typography",
 			options: {
 				pathToConfigModule: "src/utils/typography",
