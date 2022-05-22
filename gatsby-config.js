@@ -6,6 +6,7 @@ module.exports = {
   siteMetadata: {
     title: "そんほんすポートフォリオ",
     url: "https://portfolio.horumont.info",
+    siteUrl: "https://portfolio.horumont.info",
 		titleTemplate: "%s · The Real Hero",
 		description: "大阪・八尾のウェブ制作、開発フリーランス事務所WEBSONのそんほんすのポートフォリオサイトです。",
 		image: "/static/og_image.png",
