@@ -5,9 +5,10 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: "そんほんすポートフォリオ",
-    siteUrl: "https://portfolio.horumont.info",
+    url: "https://portfolio.horumont.info",
+		titleTemplate: "%s · The Real Hero",
 		description: "大阪・八尾のウェブ制作、開発フリーランス事務所WEBSONのそんほんすのポートフォリオサイトです。",
-		image: "favicon.png",
+		image: "/static/og_image.png",
 		twitterUsername: "@horumont"
   },
   plugins: [

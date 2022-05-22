@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
-import { SEO } from "./seo";
+import  SEO from "./seo";
 
 export const Header = () => {
   return (
