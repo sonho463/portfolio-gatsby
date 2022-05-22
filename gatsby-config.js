@@ -4,8 +4,11 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `そんほんすポートフォリオ`,
-    siteUrl: `https://www.portfolio-gatsby-2022.netlify.app`,
+    title: "そんほんすポートフォリオ",
+    siteUrl: "https://portfolio.horumont.info",
+		description: "大阪・八尾のウェブ制作、開発フリーランス事務所WEBSONのそんほんすのポートフォリオサイトです。",
+		image: "favicon.png",
+		twitterUsername: "@horumont"
   },
   plugins: [
     "gatsby-plugin-sass",

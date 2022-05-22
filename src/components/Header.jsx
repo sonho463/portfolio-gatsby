@@ -1,12 +1,12 @@
 import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
-import { Head } from "./Head";
+import { SEO } from "./seo";
 
 export const Header = () => {
   return (
     <>
-      <Head title="WEBSON・そんほんす" />
+      <SEO />
 
       <header className="l-header">
         <nav className="p-g-nav js-g-nav">
