@@ -16,8 +16,8 @@ export const Head = (props) => {
       <meta property="og:title" content="WEBSON・そんほんすのポートフォリオ" />
       <meta property="og:description" content="ウェブ制作、開発フリーランス事務所ウェブソン代表そんほんすのポートフォリオサイトです。" />
       <meta property="og:site_name" content="WEBSON・そんほんすのポートフォリオ" />
-      <meta property="og:image" content="/src/images/icon.png" />
-		
+      <meta property="og:image" content="favicon.png" />
+
 
       <title>{title}</title>
       <script
