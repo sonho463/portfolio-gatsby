@@ -1,27 +1,12 @@
 import * as React from "react";
-import { Helmet } from "react-helmet";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
+import { Head } from "./Head";
 
 export const Header = () => {
   return (
     <>
-      <Helmet>
-        <title>WEBSON・そんほんす</title>
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-B88FLKC288"
-        ></script>
-        <script>
-          {`
-	window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-B88FLKC288');
-	`}
-        </script>
-      </Helmet>
+      <Head title="WEBSON・そんほんす" />
 
       <header className="l-header">
         <nav className="p-g-nav js-g-nav">

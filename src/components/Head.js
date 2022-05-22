@@ -10,7 +10,7 @@ export const Head = (props) => {
         name="description"
         content="ウェブ制作、開発フリーランス事務所ウェブソン代表そんほんすのポートフォリオサイトです。"
       />
-    
+
 
 
       <title>{title}</title>
