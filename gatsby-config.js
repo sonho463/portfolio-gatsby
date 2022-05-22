@@ -9,7 +9,7 @@ module.exports = {
     siteUrl: "https://portfolio.horumont.info",
 		titleTemplate: "%s · The Real Hero",
 		description: "大阪・八尾のウェブ制作、開発フリーランス事務所WEBSONのそんほんすのポートフォリオサイトです。",
-		image: "/static/og_image.png",
+		image: "/og_image.png",
 		twitterUsername: "@horumont"
   },
   plugins: [
