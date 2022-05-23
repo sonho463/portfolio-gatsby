@@ -12,7 +12,14 @@ const ContactForm = () => {
             </div>
 
             <section class="p-contact__form">
-              <form action="" class="p-contact__form-body">
+              <form
+								class="p-contact__form-body"
+								name="contact"
+								method="POST"
+								data-netlify="true"
+								data-netlify-honeypot="bot-field"
+								>
+									<input type="hidden" name="form-name" value="contact" />
                 <label for="name" class="p-contact__name">
                   おなまえ
                   <input type="text" name="name" id="name" />
