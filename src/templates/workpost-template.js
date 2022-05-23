@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Layout } from "../components/Layout";
 import { Link, graphql } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 
 import { ImageRender } from "../components/imageRender";
 import { CircleButton } from "../components/CircleButton";
@@ -32,6 +31,11 @@ const WorkPost = ({ data }) => {
       <div class="l-main">
         <section class="p-work c-section">
           <div class="c-inner">
+					<div className="c-section__title">
+                <h2 className="c-section__title__text">
+                  {worksData.works_tag.name}
+                </h2>
+              </div>
             <div id={worksData.works_slug} className="p-work__container">
               <div class="p-work__title-outer p-about__bg">
                 <div class="p-work__title-block">
@@ -146,7 +150,7 @@ const WorkPost = ({ data }) => {
                     return null;
                   }
                 })}
-              
+
               </Swiper>
             </div>
           </div>

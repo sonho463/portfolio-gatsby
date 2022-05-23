@@ -1,23 +1,30 @@
 @use "../foundation/variables" as v;
 
-
-
-
 .c-circle-button {
-	display: inline-block;
-	width: 100px;
-	height: 100px;
-	&__inner{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		height: 100%;
-		background-color: v.$main-secondary;
-		overflow: hidden;
-		border-radius: 50%;
-	}
-&__image{
-		width: 60%;
-	}
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  @include v.mq(sm) {
+    width: 60px;
+    height: 60px;
+  }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: v.$main-secondary;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  &__text {
+    @include v.mq(sm) {
+      font-size: 1.0rem;
+
+    }
+  }
+  &__image {
+    width: 60%;
+  }
 }

@@ -1,85 +1,104 @@
 @use "../foundation/variables" as v;
 
-
-.p-work__container{
-	padding-top: 120px;
-	@include v.mq(sm){
-		padding-top: 60px;
-	}
+.p-work__container {
+  padding-top: 120px;
+  @include v.mq(sm) {
+    padding-top: 60px;
+  }
 }
 
-.p-work__title-outer{
-	// margin-top: -200px;
-	display: flex;
-	padding: 50px 5%;
-	@include v.mq(md){
-		padding: 20px 2%;
-		flex-direction: column;
-	}
+.p-work__title-outer {
+  // margin-top: -200px;
+  display: flex;
+  padding: 50px 5%;
+  @include v.mq(md) {
+    padding: 20px 2%;
+    flex-direction: column;
+  }
 }
 
 .p-work__title-block {
   color: v.$color-white;
-	flex:1;
-	padding: 20px 8%;
+  flex: 1;
+  padding: 20px 8%;
 }
-.p-work__tag{
-	font-size: 2.4rem;
+.p-work__tag {
+  font-size: 2.4rem;
+	@include v.mq(sm){
+		font-size:1.4rem;
+	}
 }
 .p-work__title__text {
   font-size: 4.2rem;
+  @include v.mq(sm) {
+    font-size: 2.4rem;
+  }
 }
 .p-work__scope__text {
   font-size: 3.2rem;
-}
-.scope-item{
-	margin-left: 20px;
-	&:not(:last-of-type)::after{
-		content: '/';
-		margin-left: 20px;
+	@include v.mq(sm){
+		font-size:1.8rem;
 	}
+}
+.scope-item {
+  margin-left: 20px;
+  &:not(:last-of-type)::after {
+    content: "/";
+    margin-left: 20px;
+  }
 }
 .p-work__desc__text {
-  font-size: 2.0rem;
-}
-
-.p-work__image-block{
-	flex:0.7;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: flex-end;
-}
-
-.p-work__image-wrapper{
-	height: 400px;
-	overflow-y: scroll;
-
-}
-
-.p-work__link-block{
-	margin-top: 30px;
-	a + a{
-		margin-left: 10px;
-	}
-}
-
-.p-work__card-outer{
-	margin-top: 20px;
-}
-
-.p-work__card-wrapper{
-	background-color: v.$color-white;
-	padding: 10px;
-	figure{
-		height: 100px;
-		overflow: hidden;
-
-	}
-}
-.p-work .c-section__title{
-	margin-bottom: 0;
+  font-size: 2rem;
 	@include v.mq(sm){
-		padding-top: 50px;
+		font-size: 1.4rem
 	}
+}
+
+.p-work__image-block {
+  flex: 0.7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.p-work__image-wrapper {
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.p-work__link-block {
+  margin-top: 30px;
+  a + a {
+    margin-left: 10px;
+  }
+}
+
+.p-work__card-outer {
+  margin-top: 20px;
+}
+
+.p-work__card-wrapper {
+  background-color: v.$color-white;
+  padding: 10px;
+  figure {
+    height: 100px;
+    overflow: hidden;
+  }
+	figure + span{
+		@include v.mq(sm){
+			font-size: 1rem;
+		}
+	}
+	h3{
+		@include v.mq(sm){
+			font-size:1.4rem;
+		}
+	}
+}
+.p-work .c-section__title {
+  margin-bottom: 0;
+  @include v.mq(sm) {
+    padding-top: 50px;
+  }
 }
