@@ -13,7 +13,7 @@ const ContactForm = () => {
             </div>
 
             <section class="p-success__body">
-							<p>
+							<p className="u-text-center">
 								お問い合わせありがとうございます。<br />
 								3営業日以内には返信いたします。
 

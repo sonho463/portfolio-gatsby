@@ -10,7 +10,7 @@ import { Link, useStaticQuery } from "gatsby";
 // url リンク先
 // alt 画像に渡すalt情報
 // text ボタンのテキスト
-// imageName 使用する画像ファイルのname情報（拡張子なしで）
+// name 使用する画像ファイルのname情報（拡張子なしで）
 
 export const CircleButton = (props) => {
   const { url, alt, text, name } = props;
@@ -43,7 +43,7 @@ export const CircleButton = (props) => {
   const arrow_side = getImage(data.webson_arrow_side);
 
   const Button = (arrow) => (
-    <Link className="c-circle-button" to={url} alt={alt} target="_blank" rel="noopener noreferrer">
+    <Link className="c-circle-button" to={url} target="_blank" rel="noopener noreferrer">
       <div className="c-circle-button__inner">
         <GatsbyImage
           image={arrow}

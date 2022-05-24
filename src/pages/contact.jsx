@@ -1,11 +1,10 @@
 import * as React from "react";
 import { Layout } from "../components/Layout";
-import { useLocation } from "@reach/router"
-
+import { useLocation } from "@reach/router";
 
 const ContactForm = () => {
-	const location = useLocation();
-	console.log(location);
+  const location = useLocation();
+  console.log(location);
   return (
     <Layout>
       <div class="l-main">
@@ -17,14 +16,14 @@ const ContactForm = () => {
 
             <section class="p-contact__form">
               <form
-								action="/success/"
-								class="p-contact__form-body"
-								name="contact"
-								method="POST"
-								data-netlify="true"
-								data-netlify-honeypot="bot-field"
-								>
-									<input type="hidden" name="form-name" value="contact" />
+                action="/success/"
+                class="p-contact__form-body"
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+              >
+                <input type="hidden" name="form-name" value="contact" />
                 <label for="name" class="p-contact__name">
                   おなまえ
                   <input type="text" name="name" id="name" />

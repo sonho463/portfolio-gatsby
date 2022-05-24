@@ -1,7 +1,7 @@
 @use "../foundation/variables" as v;
 
 .p-mv {
-	// margin-top: 110px;
+  // margin-top: 110px;
   background-color: v.$main-secondary;
   font-family: senobi-gothic, sans-serif;
   font-weight: 400;
@@ -11,9 +11,9 @@
   padding-top: 100px;
   padding-bottom: 70px;
   position: relative;
-	@include v.mq(sm){
-		padding-bottom: 0;
-	}
+  @include v.mq(sm) {
+    padding-bottom: 0;
+  }
 }
 
 .p-mv {
@@ -21,62 +21,88 @@
     position: relative;
     font-weight: 700;
     &__text {
-			position: relative;
+      position: relative;
     }
   }
   &__heading::before {
-		content: "";
+    content: "";
     display: block;
     position: absolute;
-		transform:translate(-30%, -70%);
+    transform: translate(-30%, -70%);
     background-image: url(../images/mv/yellow-circle.png);
     background-size: contain;
-		background-repeat: no-repeat;
+    background-repeat: no-repeat;
     width: 210px;
     height: 210px;
   }
   &__heading::after {
-		content: "";
+    content: "";
     display: block;
     position: absolute;
     right: 0;
     bottom: -220%;
     background-image: url(../images/mv/yellow-circle.png);
     background-size: contain;
-		background-repeat: no-repeat;
+    background-repeat: no-repeat;
     width: 130px;
     height: 130px;
-		@include v.mq(sm){
-			bottom: -10%;
-		}
+    @include v.mq(sm) {
+      bottom: -10%;
+    }
   }
 }
 
 .p-mv {
-	&__sub-heading{
-		position: relative;
-	}
-	&__sub-heading__text {
-		font-size: 2.4rem;
-		@include v.mq(sm){
-			font-size: 1.8rem;
-		}
+  &__sub-heading {
+    position: relative;
+  }
+  &__sub-heading__text {
+    font-size: 2.4rem;
+    @include v.mq(sm) {
+      font-size: 1.8rem;
+    }
   }
   &__heading__text {
-		font-size: 7.2rem;
-		@include v.mq(sm){
-			font-size: 4rem;
-		}
+    font-size: 7.2rem;
+    @include v.mq(sm) {
+      font-size: 4rem;
+    }
   }
   &__face-photo {
-		width: 160px;
+    width: 160px;
     margin-right: auto;
     margin-left: auto;
   }
   &__lead__text {
-		font-size: 4rem;
-		@include v.mq(sm){
-			font-size: 3.2rem;
-		}
+    font-size: 4rem;
+    @include v.mq(sm) {
+      font-size: 3.2rem;
+    }
   }
+}
+
+@keyframes faceAnimation {
+  0% {
+		transform:translateX(-600%) rotate(0);
+  }
+
+  20% {
+		// transform:translateY(0);
+
+  }
+	50%{
+		// transform: translateY(-50%);
+	}
+
+  95% {
+		transform:translateX(20%) rotate(370deg);
+  }
+	100%{
+		transform:translateX(0) rotate(360deg);
+
+	}
+}
+
+.p-mv__face-photo{
+	animation: faceAnimation 5s;
 }

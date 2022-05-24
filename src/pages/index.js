@@ -5,6 +5,7 @@ import { Link, graphql } from "gatsby";
 import { Layout } from "../components/Layout";
 import { CvButtonWrapper } from "../components/CvButtonWrapper";
 import { ImageRender } from "../components/imageRender";
+import { CircleButton } from "../components/CircleButton";
 
 // import Swiper core and required modules
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
@@ -56,6 +57,7 @@ const IndexPage = ({ data }) => {
                   className="p-mv__face-photo__image"
                 />
               </figure>
+
               <div className="p-mv__lead">
                 <p className="p-mv__lead__text">
                   コードを書くことが大好きです。
@@ -118,6 +120,12 @@ const IndexPage = ({ data }) => {
                 <h2 className="c-section__title__text">
                   制作実績・これまでの活動
                 </h2>
+								<CircleButton
+                  url="/archive-works" //リンク先
+                  alt="実績一覧へのリンク" // 画像に渡すalt情報
+                  text="実績一覧" //ボタンのテキスト
+                  name="arrow_up" //使用する画像ファイルのname情報（拡張子なしで）
+                />
               </div>
               <Swiper
                 className="p-works__card-outer"

@@ -4,6 +4,9 @@
   display: inline-block;
   width: 100px;
   height: 100px;
+	&:hover{
+		opacity: 0.7;
+	}
   @include v.mq(sm) {
     width: 60px;
     height: 60px;
@@ -19,6 +22,7 @@
     border-radius: 50%;
   }
   &__text {
+		font-size: 1.2rem;
     @include v.mq(sm) {
       font-size: 1.0rem;
 
@@ -27,4 +31,13 @@
   &__image {
     width: 60%;
   }
+}
+
+.p-works .c-circle-button{
+	&__inner{
+		background-color: v.$main-primary;
+	}
+&__text{
+	color: v.$color-white;
+}
 }

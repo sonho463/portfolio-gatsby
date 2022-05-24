@@ -1,0 +1,25 @@
+@use "../foundation/variables" as v;
+
+.p-works__archive-title {
+  background-color: v.$main-primary;
+  border-bottom: 20px solid v.$accent-primary;
+  border-left: 20px solid v.$accent-primary;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding: 10px;
+
+  &__text {
+    font-size: 4rem;
+    color: v.$color-white;
+  }
+}
+
+.p-works__archive {
+  .p-work__card-wrapper {
+    border: 1px solid transparent;
+    &:hover {
+      border: 1px solid v.$color-border-gray;
+      transition: 0.3s;
+    }
+  }
+}
