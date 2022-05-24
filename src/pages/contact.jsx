@@ -1,7 +1,11 @@
 import * as React from "react";
 import { Layout } from "../components/Layout";
+import { useLocation } from "@reach/router"
+
 
 const ContactForm = () => {
+	const location = useLocation();
+	console.log(location);
   return (
     <Layout>
       <div class="l-main">
@@ -13,6 +17,7 @@ const ContactForm = () => {
 
             <section class="p-contact__form">
               <form
+								action="/success/"
 								class="p-contact__form-body"
 								name="contact"
 								method="POST"
