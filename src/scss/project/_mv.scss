@@ -72,6 +72,9 @@
     width: 160px;
     margin-right: auto;
     margin-left: auto;
+		transform:translateX(-600%) rotate(0);
+
+
   }
   &__lead__text {
     font-size: 4rem;
@@ -104,5 +107,8 @@
 }
 
 .p-mv__face-photo{
-	animation: faceAnimation 3s ease-in;
+	animation: faceAnimation 2s ease-in;
+	animation-delay: 1s;
+	animation-fill-mode: forwards;
+
 }
