@@ -81,9 +81,9 @@ const WorkPost = ({ data }) => {
                     ) : null}
 
                     <CircleButton
-                      url="/#works"
+                      url="/archive-works"
                       alt="実績アーカイブページへ戻る"
-                      text="もどる"
+                      text="実績一覧へ"
                       name="arrow_down"
                     />
                   </div>
