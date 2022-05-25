@@ -152,6 +152,7 @@ export const query = graphql`
             slug
           }
           works_title
+					works_slug
           works_image {
             url
           }
