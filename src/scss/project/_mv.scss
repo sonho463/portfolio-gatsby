@@ -94,7 +94,7 @@
 		// transform: translateY(-50%);
 	}
 
-  95% {
+  85% {
 		transform:translateX(20%) rotate(370deg);
   }
 	100%{
@@ -104,5 +104,5 @@
 }
 
 .p-mv__face-photo{
-	animation: faceAnimation 5s;
+	animation: faceAnimation 3s ease-in;
 }
