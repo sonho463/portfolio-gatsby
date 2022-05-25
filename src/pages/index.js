@@ -120,7 +120,7 @@ const IndexPage = ({ data }) => {
                 <h2 className="c-section__title__text">
                   制作実績・これまでの活動
                 </h2>
-								<CircleButton
+                <CircleButton
                   url="/archive-works" //リンク先
                   alt="実績一覧へのリンク" // 画像に渡すalt情報
                   text="実績一覧" //ボタンのテキスト
@@ -435,7 +435,8 @@ const IndexPage = ({ data }) => {
                 </div>
                 <div className="p-career__desc">
                   <p className="p-career__desc__text c-desc">
-                    コロナ禍の中、プログラミング学習再開。Progateウェブ開発パス（Rails）を完走。Railsチュートリアル完走。Isaraの模写中にOver40WebClubに加入。学習が加速。
+                    コロナ禍の中、プログラミング学習再開。Progateウェブ開発パス（Rails）を完走。Railsチュートリアル完走。Isaraの模写中にOver
+                    40 Web Clubに加入。学習が加速。
                     勉強会ドリブン勉強法を実践、connpassで4回の学習会の講師。
                   </p>
                 </div>
@@ -444,8 +445,8 @@ const IndexPage = ({ data }) => {
                 </div>
                 <div className="p-career__desc">
                   <p className="p-career__desc__text c-desc">
-                    転勤して、新しい学校で日本語指導。
-                    Over40WebClubの先輩フリーランスからコーディング〜WordPress化案件をいただいて、納品。エクプラというコミュニティでウェブ制作会社のLPコーディング案件をいただいて納品。
+                    転勤して、新しい学校で日本語指導。 Over 40 Web
+                    Clubの先輩フリーランスからコーディング〜WordPress化案件をいただいて、納品。エクプラというコミュニティでウェブ制作会社のLPコーディング案件をいただいて納品。
                     現在は、自分が所属する団体のHP構築、SNS運用中。
                   </p>
                 </div>
