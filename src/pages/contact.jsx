@@ -57,14 +57,13 @@ const ContactForm = () => {
                 <input type="hidden" name="form-name" value="contact" />
                 <label for="name" className="p-contact__name">
                   おなまえ
-                  {/* <input type="text" name="name" /> */}
                   <input type="text" {...register("name", { required: true })} />
-                  {errors.name?.type === "required" && "Name is required"}
+                  {errors.name?.type === "required" && "お名前をご記入下さい"}
                 </label>
                 <label for="email" className="p-contact__email">
                   メールアドレス
-                  <input type="email" name="email" />
-                  {/* {errors.email?.type === "required" && "Email is required"} */}
+                  <input {...register("email", { required: true })} />
+                  {errors.email?.type === "required" && "メールアドレスをご記入下さい"}
                 </label>
                 <label
                   for="email_validate"
@@ -75,20 +74,23 @@ const ContactForm = () => {
                     type="email"
                     name="email_validate"
                     id="email_validate"
-                    // {...register("emailvalidation", { required: true })}
+                    {...register("emailvalidation", { required: true })}
                   />
-                  {/* {errors.emailvalidation?.type === "required" &&
-                    "Email is required"} */}
+                  {errors.emailvalidation?.type === "required" &&
+                    "メールアドレスをもう一度ご記入下さい"}
                 </label>
                 <label for="content" className="p-contact__content">
                   お問い合わせ内容
                   <textarea
-                    // {...register("contents", { required: true })}
+                    {...register("contents", { required: true })}
+
                     name="content"
                     id="content"
                     row="5"
                     cols="33"
                   />
+									 {errors.content?.type === "required" &&
+                    "問い合わせ内容をご記入下さい"}
                 </label>
 
                 <input
