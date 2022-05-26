@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Layout } from "../components/Layout";
 import { useForm } from "react-hook-form";
+import { navigate } from "gatsby";
 
 function encode(data) {
   return Object.keys(data)
@@ -26,6 +27,8 @@ const ContactForm = () => {
     })
       .then(() => {
         console.log("OK");
+				navigate("/success/")
+
       })
       .catch((error) => {
         // 失敗時の処理
