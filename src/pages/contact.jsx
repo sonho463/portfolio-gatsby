@@ -13,9 +13,11 @@ const ContactForm = () => {
   const {
     register,
     handleSubmit,
+    getValues,
+    trigger,
     watch,
     formState: { errors },
-  } = useForm();
+  } = useForm({ mode: "onBlur", criteriaMode: "all" });
 
   const onSubmit = (data) => {
     console.log(data);
@@ -59,13 +61,33 @@ const ContactForm = () => {
                     type="text"
                     {...register("name", { required: true })}
                   />
-                  {errors.name?.type === "required" && "お名前をご記入下さい"}
+                  {errors.name?.type === "required" && (
+                    <span className="u-text-alert">お名前をご記入下さい</span>
+                  )}
                 </label>
                 <label for="email" className="p-contact__email">
                   メールアドレス
-                  <input {...register("email", { required: true })} />
-                  {errors.email?.type === "required" &&
-                    "メールアドレスをご記入下さい"}
+                  <input
+                    {...register("email", {
+                      required: true,
+                      pattern: /^[\w\-._]+@[\w\-._]+\.[A-Za-z]+/,
+											onBlur:()=>{
+												if (getValues("email_confirmation")) {
+													trigger("email_confirmation");
+												}
+											}
+                    })}
+                  />
+                  {errors.email?.type === "required" && (
+                    <span className="u-text-alert">
+                      メールアドレスをご記入下さい
+                    </span>
+                  )}
+                  {errors.email?.type === "pattern" && (
+                    <span className="u-text-alert">
+                      入力形式がメールアドレスではありません
+                    </span>
+                  )}
                 </label>
                 <label
                   for="email_validate"
@@ -76,10 +98,19 @@ const ContactForm = () => {
                     type="email"
                     name="email_validate"
                     id="email_validate"
-                    {...register("emailvalidation", { required: true })}
+                    {...register("emailvalidation", {
+                      required: true,
+                      validate: (value) => value === getValues("email"),
+                    })}
                   />
-                  {errors.emailvalidation?.type === "required" &&
-                    "メールアドレスをもう一度ご記入下さい"}
+                  {errors.emailvalidation?.type === "required" && (
+                    <span className="u-text-alert">
+                      メールアドレスをもう一度ご記入下さい
+                    </span>
+                  )}
+                  {errors.emailvalidation?.type === "validate" && (
+                    <span className="u-text-alert">メールアドレスが一致しません</span>
+                  )}
                 </label>
                 <label for="content" className="p-contact__content">
                   お問い合わせ内容
@@ -90,8 +121,11 @@ const ContactForm = () => {
                     row="5"
                     cols="33"
                   />
-                  {errors.content?.type === "required" &&
-                    "問い合わせ内容をご記入下さい"}
+                  {errors.content?.type === "required" && (
+                    <span className="u-text-alert">
+                      問い合わせ内容をご記入下さい
+                    </span>
+                  )}
                 </label>
 
                 <input
