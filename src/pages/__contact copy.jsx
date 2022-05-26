@@ -1,37 +1,37 @@
 import * as React from "react";
 import { Layout } from "../components/Layout";
-// import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
-// function encode(data) {
-//   return Object.keys(data)
-//     .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-//     .join("&");
-// }
+function encode(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
 
 const ContactForm = () => {
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   watch,
-  //   formState: { errors },
-  // } = useForm();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
 
-  // const onSubmit = (data) => {
-  //   console.log(data);
-  //   fetch("/", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //     body: encode({ "form-name": "contact", ...data }),
-
-  //   })
-  //     .then(() => {
-  //       console.log("OK");
-  //     })
-  //     .catch((error) => {
-  //       // 失敗時の処理
-  //       console.log("NG");
-  //     });
-  // };
+  const onSubmit = (data) => {
+    console.log(data);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...data }),
+  
+    })
+      .then(() => {
+        console.log("OK");
+      })
+      .catch((error) => {
+        // 失敗時の処理
+        console.log("NG");
+      });
+  };
 
   return (
     <Layout>
@@ -44,23 +44,23 @@ const ContactForm = () => {
 
             <section className="p-contact__form">
               <form
-                // noValidate
+                noValidate
                 action="/success/"
                 className="p-contact__form-body"
                 name="contact"
                 method="POST"
-                // onSubmit={handleSubmit}
+                onSubmit={handleSubmit(onSubmit)}
               >
                 <input type="hidden" name="form-name" value="contact" />
                 <label for="name" className="p-contact__name">
                   おなまえ
-                  <input type="text" name="name" />
-                  {/* {errors.name?.type === "required" && "Name is required"} */}
+                  <input {...register("name", { required: true })} />
+                  {errors.name?.type === "required" && "Name is required"}
                 </label>
                 <label for="email" className="p-contact__email">
                   メールアドレス
-                  <input type="email" name="email" />
-                  {/* {errors.email?.type === "required" && "Email is required"} */}
+                  <input {...register("email", { required: true })} />
+                  {errors.email?.type === "required" && "Email is required"}
                 </label>
                 <label
                   for="email_validate"
@@ -68,18 +68,18 @@ const ContactForm = () => {
                 >
                   メールアドレス（確認）
                   <input
-                    type="email"
+                    type="text"
                     name="email_validate"
                     id="email_validate"
-                    // {...register("emailvalidation", { required: true })}
+                    {...register("emailvalidation", { required: true })}
                   />
-                  {/* {errors.emailvalidation?.type === "required" &&
-                    "Email is required"} */}
+                  {errors.emailvalidation?.type === "required" &&
+                    "Email is required"}
                 </label>
                 <label for="content" className="p-contact__content">
                   お問い合わせ内容
                   <textarea
-                    // {...register("contents", { required: true })}
+                    {...register("contents", { required: true })}
                     name="content"
                     id="content"
                     row="5"
