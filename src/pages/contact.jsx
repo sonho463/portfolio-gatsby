@@ -1,37 +1,37 @@
 import * as React from "react";
 import { Layout } from "../components/Layout";
-// import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
-// function encode(data) {
-//   return Object.keys(data)
-//     .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-//     .join("&");
-// }
+function encode(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
 
 const ContactForm = () => {
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   watch,
-  //   formState: { errors },
-  // } = useForm();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
 
-  // const onSubmit = (data) => {
-  //   console.log(data);
-  //   fetch("/", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //     body: encode({ "form-name": "contact", ...data }),
+  const onSubmit = (data) => {
+    console.log(data);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...data }),
 
-  //   })
-  //     .then(() => {
-  //       console.log("OK");
-  //     })
-  //     .catch((error) => {
-  //       // 失敗時の処理
-  //       console.log("NG");
-  //     });
-  // };
+    })
+      .then(() => {
+        console.log("OK");
+      })
+      .catch((error) => {
+        // 失敗時の処理
+        console.log("NG");
+      });
+  };
 
   return (
     <Layout>
@@ -49,13 +49,14 @@ const ContactForm = () => {
                 className="p-contact__form-body"
                 name="contact"
                 method="POST"
-                // onSubmit={handleSubmit}
+                onSubmit={handleSubmit(onSubmit)}
               >
                 <input type="hidden" name="form-name" value="contact" />
                 <label for="name" className="p-contact__name">
                   おなまえ
-                  <input type="text" name="name" />
-                  {/* {errors.name?.type === "required" && "Name is required"} */}
+                  {/* <input type="text" name="name" /> */}
+                  <input type="text" {...register("name", { required: true })} />
+                  {errors.name?.type === "required" && "Name is required"}
                 </label>
                 <label for="email" className="p-contact__email">
                   メールアドレス
