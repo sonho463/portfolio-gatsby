@@ -23,12 +23,10 @@ const ContactForm = () => {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...data }),
-
     })
       .then(() => {
         console.log("OK");
-				navigate("/success/")
-
+        navigate("/success/");
       })
       .catch((error) => {
         // 失敗時の処理
@@ -57,13 +55,17 @@ const ContactForm = () => {
                 <input type="hidden" name="form-name" value="contact" />
                 <label for="name" className="p-contact__name">
                   おなまえ
-                  <input type="text" {...register("name", { required: true })} />
+                  <input
+                    type="text"
+                    {...register("name", { required: true })}
+                  />
                   {errors.name?.type === "required" && "お名前をご記入下さい"}
                 </label>
                 <label for="email" className="p-contact__email">
                   メールアドレス
                   <input {...register("email", { required: true })} />
-                  {errors.email?.type === "required" && "メールアドレスをご記入下さい"}
+                  {errors.email?.type === "required" &&
+                    "メールアドレスをご記入下さい"}
                 </label>
                 <label
                   for="email_validate"
@@ -82,14 +84,13 @@ const ContactForm = () => {
                 <label for="content" className="p-contact__content">
                   お問い合わせ内容
                   <textarea
-                    {...register("contents", { required: true })}
-
+                    {...register("content", { required: true })}
                     name="content"
                     id="content"
                     row="5"
                     cols="33"
                   />
-									 {errors.content?.type === "required" &&
+                  {errors.content?.type === "required" &&
                     "問い合わせ内容をご記入下さい"}
                 </label>
 
