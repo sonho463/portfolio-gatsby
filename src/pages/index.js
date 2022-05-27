@@ -52,6 +52,7 @@ const IndexPage = ({ data }) => {
               </div>
               <figure className="p-mv__face-photo">
                 <StaticImage
+                  placeholder="blurred"
                   src="../images/mv/face.png"
                   alt="そんほんすの似顔絵"
                   className="p-mv__face-photo__image"
