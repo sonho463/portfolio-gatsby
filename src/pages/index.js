@@ -316,13 +316,13 @@ const IndexPage = ({ data }) => {
                     />
                   </figure>
                   <h3 className="p-services__title c-title">
-                    ウェブサイト制作
+                    ウェブサイト制作・開発
                   </h3>
                   <p className="p-services__desc c-desc">
-                    長年の教員経験で培った傾聴のスキルでお客様の要望を聞き取り、最適なデザイン、サイトを提案します。
+                    HTML/CSS構築、WordPress開発（オリジナルテーマ）、JAMstack開発など承ります。コーディング代行、軽微な修正、運用案件など、小さなお仕事も精一杯させていただきます。
                   </p>
                 </li>
-                <li className="p-services__item">
+                {/* <li className="p-services__item">
                   <figure className="p-services__image-wrapepr">
                     <StaticImage
                       src="../images/services/services-coding.jpg"
@@ -330,13 +330,11 @@ const IndexPage = ({ data }) => {
                       className="p-services__image"
                     />
                   </figure>
-                  <h3 className="p-services__title c-title">
-                    コーディング代行
-                  </h3>
+                  <h3 className="p-services__title c-title">ウェブ集客</h3>
                   <p className="p-services__desc c-desc">
-                    サイトの構築から更新、細かい修正などにもフットワーク軽く対応します。
+									SNSでの集客施策やMEO施策についてもご提案ができます。代行
                   </p>
-                </li>
+                </li> */}
                 <li className="p-services__item">
                   <figure className="p-services__image-wrapepr">
                     <StaticImage
@@ -347,7 +345,7 @@ const IndexPage = ({ data }) => {
                   </figure>
                   <h3 className="p-services__title c-title">その他もろもろ</h3>
                   <p className="p-services__desc c-desc">
-                    その他、ウェブ周りのことにも対応します。お客様のビジネスの状況に応じて、MEO施策やSNS施策のコンサル、代行も対応いたします。
+                    その他、ウェブ周りのこと対応いたします。お気軽にご相談ください。
                   </p>
                 </li>
               </ul>

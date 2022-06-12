@@ -134,7 +134,7 @@ const WorkPost = ({ data }) => {
 
 export const query = graphql`
   query {
-    allTags: allMicrocmsWorksTag {
+    allTags: allMicrocmsWorksTag(sort: {fields: no}) {
       edges {
         node {
           name
