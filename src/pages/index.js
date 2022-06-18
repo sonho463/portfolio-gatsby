@@ -463,7 +463,7 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMicrocmsWorksMain(sort: { order: ASC, fields: createdAt }) {
+    allMicrocmsWorksMain(sort: { order: DESC, fields: createdAt }) {
       edges {
         node {
           works_tag {
