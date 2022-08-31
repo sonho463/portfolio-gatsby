@@ -15,7 +15,7 @@ export const ImageRender = (props) => {
       if (array.indexOf(elem) === 2) {
         param = `?${elem}`;
       } else {
-        param = `${param}`;
+        param = `${param}&${elem}`;
       }
     }
 		return param;
