@@ -241,11 +241,10 @@ const IndexPage = ({ data }) => {
                   </figure>
                   <div className="p-skills__article__text-block">
                     <h3 className="p-skills__article__title c-title">
-                      タスクランナー Node.js
+                      タスクランナー npm script
                     </h3>
                     <p className="p-skills__article__text c-desc">
-                      タスクランナーにnode
-                      Scriptを使っています。scssのコンパイル、prefixの付与など。静的サイトのコーディングをできるだけ効率化します。
+                      タスクランナーにnpm Scriptを使っています。scssのコンパイル、prefixの付与など。静的サイトのコーディングをできるだけ効率化します。
                     </p>
                   </div>
                 </li>
