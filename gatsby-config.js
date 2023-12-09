@@ -71,12 +71,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-wordpress",
-      options: {
-        url: "https://horumont.info/graphql",
-      },
-    },
-    {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: [process.env.GATSBY_TRACKING_ID],
